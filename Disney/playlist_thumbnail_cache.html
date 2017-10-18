@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kaltura Player Tester</title>
+    <script src="//code.jquery.com/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/mwEmbed/mwEmbedLoader.php/p/1068292/uiconf_id/35976132"></script>
+    <style>
+        li{
+            list-style-type: none;
+            padding:5px;
+            display: inline-block;
+        }
+        ul{
+            padding: 0;
+        }
+        .video-player{
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+<h1> External Playlist with Kaltura Player</h1>
+<p>Testing an external playlist with the kaltura player (PRODUCTION ACCOUNT ONLY)</p>
+<p>Check the thumbnail changing between media items</p>
+<div id="videoPlayer" class="video-player"></div>
+
+<div id="playlistItems">
+    <ul>
+        <li>
+            <button type="button" onclick="onButtonClicked(0)">Playlist item 001</button>
+        </li>
+        <li>
+            <button type="button" onclick="onButtonClicked(1)">Playlist item 002</button>
+        </li>
+        <li>
+            <button type="button" onclick="onButtonClicked(2)">Playlist item 003</button>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+    var playlistItems = [
+        {"entryid":"1_if9z2xc5", "thumbnail":"http://img.lum.dolimg.com/v1/images/image_6a9c25f4.jpeg?height=354&region=0%2C0%2C1920%2C1080&width=630"},
+        {"entryid":"1_eqf9ekao", "thumbnail":"http://img.lum.dolimg.com/v1/images/image_bbfe8828.jpeg?height=354&region=0%2C0%2C1920%2C1080&width=630"},
+        {"entryid":"1_12zmas16", "thumbnail":"http://img.lum.dolimg.com/v1/images/image_7f90efd5.png?height=354&region=0%2C0%2C2880%2C1612&width=630"}
+    ];
+    var curItem = 0;
+    var len = playlistItems.length;
+
+    $('document').ready(function(){
+        embed();
+    });
+
+    function embed() {
+        mw.setConfig('debug', true);
+        mw.setConfig('Kaltura.LeadWithHTML5', true);
+        kWidget.embed({
+            "targetId": "videoPlayer",
+            "wid": "_1068292", //"_1082342",
+            "uiconf_id": 35976132, //35673902,
+            "flashvars": {
+                "thumbnailUrl": playlistItems[curItem].thumbnail,
+                "logo.plugin": false,
+                "closedCaptions": {
+                    "plugin": true,
+                    "hideWhenEmpty":false
+                },
+                "IframeCustomPluginCss1" : 'https://qa-dot-di-lumiere-us-nonprod-2.appspot.com/client/static/skins/css/matterhorn-static-player-skin.css',
+                'sourceSelector': {
+                    "plugin": true,
+                    "switchOnResize": false,
+                    "simpleFormat": true,
+                    'displayMode' : 'sizebitrate'
+                },
+                'localizationCode': 'en',
+                'doubleClick': {
+                    'disableCompanionAds'     : false,
+                    'htmlCompanions'          : 'companionad:300:60',
+                    'adsManagerLoadedTimeout' : 5000,
+                    'plugin'                  : true,
+                    'adTagUrl'                : ''
+                },
+                "accessibility-plugin": {
+                    //This line turn on the plugin
+                    'plugin': true,
+                    //This line sets the plugin file path
+                    "iframeHTML5Js" : "https://qa-dot-di-lumiere-us-nonprod-2.appspot.com/client/static/skins/js/accessibility-plugin.js"
+                },
+                'autoPlay': false,
+                'autoMute': false,
+                'loop': false,
+                'metadataProfileId':null,
+                'externalInterfaceDisabled' : false,
+                'mediaProxy.preferedFlavorBR': 720
+            },
+            "cache_st": 1446230550,
+            "entry_id": playlistItems[curItem].entryid, //"1_la97dz6q", //"0_5nlj7hvp"
+            'readyCallback': onPlayerReady
+        });
+    }
+
+
+    function onPlayerReady(playerId) {
+        console.log('onPlayerReady ' + playerId);
+        setupListeners(playerId); //once the player is ready we can add our listeners
+    }
+
+    function setupListeners(playerId) {
+        var playerElement = document.getElementById(playerId);
+        playerElement.kBind('onChangeMedia', onChangeMedia);
+        playerElement.kBind('mediaLoaded', onMediaLoaded);
+        playerElement.kBind('playerPlayed', onPlayerPlayed);
+        playerElement.kBind('playerPaused', onPlayerPaused);
+        playerElement.kBind('playerPlayEnd', onPlayerPlayEnd);
+    }
+
+    function onChangeMedia() {
+        console.log("onChangeMedia");
+    }
+
+    function onMediaLoaded() {
+        console.log("onMediaLoaded");
+    }
+
+    function onPlayerPlayed() {
+        console.log("onPlayerPlayed");
+    }
+
+    function onPlayerPaused() {
+        console.log("onPlayerPaused");
+    }
+
+    function onPlayerPlayEnd() {
+        console.log("onPlayerPlayEnd");
+
+        if (curItem >= len-1) {
+            curItem = 0;
+        } else {
+            curItem += 1;
+        }
+
+        switchVideo(curItem)
+    }
+
+    function onButtonClicked(num) {
+        console.log("onButtonClicked");
+        if (curItem === num) { return; }
+        curItem = num;
+        switchVideo(curItem);
+    }
+
+    function switchVideo(curItem) {
+        console.log("switchVideo entryid = " + playlistItems[curItem].entryid);
+        console.log("switchVideo thumbnail = " + playlistItems[curItem].thumbnail);
+
+        var kdp = document.getElementById( 'videoPlayer' );
+        kdp.sendNotification("changeMedia", { "entryId" : playlistItems[curItem].entryid });
+        kdp.kBind('changeMedia', function() {
+            kdp.setKDPAttribute("mediaProxy.entry", "thumbnailUrl", kdp.evaluate('{configProxy.flashvars.thumbnailUrl}'));
+        })
+
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>adReadyCallback Test Page</title>
+</head>
+<body>
+<script src="http://cdnapi.kaltura.com/p/1836881/sp/183688100/embedIframeJs/uiconf_id/33849591/partner_id/1836881"></script>
+<div id="kaltura_player_1458070164" style="width: 560px; height: 395px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+<span itemprop="name" content="c448d2016de90862934129756b592be6"></span>
+<span itemprop="description" content=""></span>
+<span itemprop="duration" content="0"></span>
+<span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1745101/sp/174510100/thumbnail/entry_id/1_m1oznmjx/version/100001"></span>
+<span itemprop="width" content="560"></span>
+<span itemprop="height" content="395"></span>
+</div>
+<script>
+kWidget.addReadyCallback( function( playerId ){
+var kdp = document.getElementById( playerId );
+kdp.kBind( 'adEnd', function(){
+setTimeout(function(){kWidget.destroy ("kaltura_player_1458070164")}, 1000);	
+})
+});
+</script>
+
+<script>
+kWidget.embed({
+	"targetId": "kaltura_player_1458070164",
+	"wid": "_1836881",
+	"uiconf_id": 33849591,
+	"flashvars": {
+	"doubleClick":{
+		"leadWithFlash": true,
+		"adTagUrl": "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&cust_params=sample_ct%3Dlinear&correlator="
+	},
+	"controlBarContainer": {
+	"plugin": true
+	},	
+	"streamerType": "auto",
+	"autoPlay": true,
+	"debugMode": true
+	},
+	"cache_st": 1458070164,
+	"entry_id": "0_imp0jd6s"
+});
+</script>
+</body>
+</html>

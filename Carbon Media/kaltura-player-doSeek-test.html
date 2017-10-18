@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kaltura Player doSeek Test</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <script src="https://cdnapisec.kaltura.com/p/1897241/sp/189724100/embedIframeJs/uiconf_id/39359371/partner_id/1897241"></script>
+        <div id="kaltura_player_1500647590" style="width: 560px; height: 395px;"></div>
+        <script>
+            mw.setConfig("debug", true);
+            kWidget.embed({
+                "targetId": "kaltura_player_1500647590",
+                "wid": "_1897241",
+                "uiconf_id": 39359371,
+                "flashvars": {
+                    "autoPlay": true,
+                    "streamerType": "auto",
+                    "mediaProxy.mediaPlayFrom" : "30",
+                },
+                "cache_st": 1500647590,
+                "entry_id": "0_aqscy76n" // Live stream
+            });
+setTimeout()
+            kWidget.addReadyCallback(function(id) {  
+                var kdp = document.getElementById(id);
+
+                kdp.kBind('mediaReady', function() {
+                    console.log('PLAYER IS READY!');
+
+                    // Seek to 30 seconds from the start of the video
+//                    kdp.sendNotification("doSeek", 30);
+                });
+
+                kdp.kBind('seeked', function(time) {
+                    console.log('Player sought to this position: ' + time);                
+                });
+            });
+        </script>  
+    </body>
+</html>

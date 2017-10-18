@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdnapi.kaltura.com/p/1068292/sp/106829200/embedIframeJs/uiconf_id/35976132/partner_id/1068292"></script>
+    <div id="player_playerElement" style="width: 669px; height: 376px;"></div>
+  <script>
+    var flashVars = {
+      "externalInterfaceDisabled" : false,
+      "loop" : true,
+      'autoPlay': true,
+      'autoMute': false,
+      'EmbedPlayer.ForceNativeFullscreenOnClipDone': true
+    };
+
+    var pluginVars = {
+      'IframeCustomPluginCss1' : 'https://lumiere.disney.io/client/static/skins/css/matterhorn-static-player-skin.css',
+    };
+    $.extend(flashVars, pluginVars);
+
+    var hlsPluginVars = {
+      'LeadWithHLSOnJs': true,
+      'debugMode':true,
+      "inlineScript" : false,
+      'hlsjs':{
+        'plugin': true
+      }
+    };
+    $.extend(flashVars, hlsPluginVars);
+
+    var capVars = {
+      'closedCaptions':{
+        'plugin': true,
+        'hideWhenEmpty':true
+      }
+    };
+    $.extend(flashVars, capVars);
+
+    var adVars = {
+      'doubleClick': {
+        'plugin': false
+      }
+    };
+    $.extend(flashVars, adVars);
+    mw.setConfig("debug", true);
+    kWidget.embed({
+
+      "targetId": "player_playerElement",
+      "wid": "_" + "1068292",
+      "uiconf_id": "35976132",
+      "flashvars": flashVars,
+      "cache_st": 1382978527,
+      "entry_id": "1_gn7l6ol8"
+    });
+  </script>
+</body>
+</html>

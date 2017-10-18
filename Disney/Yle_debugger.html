@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YLE - Custom Debugger</title>
+    <style>
+        .greenText {
+            color: lawngreen;
+        }
+
+        #redText {
+            color: red;
+        }
+
+        #analyticsLog {
+            width: 550px;
+            height: 320px;
+            margin-left: 10px;
+            background-color: black;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border: 1px solid black;
+            font-family: Arial;
+            font-size: 11px;
+            word-wrap: break-word;
+
+        }
+
+    </style>
+    <script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+    <script>$('html, body').css({
+        'overflow': 'hidden',
+        'height': '100%'
+    });</script>
+
+</head>
+
+<body>
+<!--Player main div-->
+<script src="http://cdnapi.kaltura.com/p/1955031/sp/195503100/embedIframeJs/uiconf_id/37558971/partner_id/1955031"></script>
+<div id="details"
+     style="width: 1125px; height: auto; margin: auto; text-align: center; border-width: 1px; border-style: solid; border-color: black; padding-bottom: 10px;">
+    <h2>YLE - Custom Debugger</h2>
+    <h4 id="uiconf"></h4>
+    <br>
+    <h4 id="entrydit"></h4><br>
+</div>
+<br>
+
+<div style="width:1125px; height: 360px; margin: auto;">
+    <div id="kaltura_player_1466954509" style="width: 560px; height: 320px; float: left" itemprop="video" itemscope
+         itemtype="http://schema.org/VideoObject">
+        <span itemprop="name" content="Mad Max - Fury Road"></span>
+        <span itemprop="description" content=""></span>
+        <span itemprop="duration" content="153"></span>
+        <span itemprop="thumbnail"
+              content="http://cfvod.kaltura.com/p/1955031/sp/106829200/thumbnail/entry_id/1_5h7ont5v/version/100032/acv/531"></span>
+        <span itemprop="width" content="560"></span>
+        <span itemprop="height" content="315"></span>
+    </div>
+    <div id="analyticsLog" style="float: left;">
+        <script>
+            $("#analyticsLog:contains('onAdsManagerLoaded')").css("color", "lawngreen");
+        </script>
+    </div>
+    <br>
+    <div style="clear: both; margin-bottom: 10px;"></div>
+    <div id="new"
+         style="width: 1125px; height: 30px; margin: auto; text-align: left; border-width: 1px; border-style: solid; border-color: black; padding-top: 10px; padding-left: 10px;">
+        <button type="button" onclick="location.reload();" style="margin-right: 10px">Reload page</button>
+        <button type="button" onclick=$("#analyticsLog").empty();>Clear log</button>
+    </div>
+
+</div>
+
+<script>
+    //kBinds and other functions
+    kWidget.addReadyCallback(function (playerId) {
+        var kdp = document.getElementById(playerId);
+        kdp.kBind('playerReady', function () {
+            $("#analyticsLog").append(kdp.evaluate("Player Version: " + "{playerVersion}<br>\n")).addClass("greenText");
+            $("#analyticsLog").append(kdp.evaluate("Entry Id: " + "{mediaProxy.entry.id}\n<br>")).addClass("greenText");
+            kdp.kBind('playerReady', function () {
+                $("#analyticsLog").append("Ready to play.<br>").addClass("greenText")
+            });
+            $("#entrydit").replaceWith(kdp.evaluate("<b>Entry Id: </b>" + "<b>{mediaProxy.entry.id}\n</b>"));
+            $("#uiconf").replaceWith(kdp.evaluate("<b>Uiconf id: </b>" + "<b>{configProxy.kw.uiConfId}\n</b>"));
+
+        })©
+
+        kdp.kBind('mediaReady', function () {
+            $(window.alert("Media Ready Event"));
+        })
+        kdp.kBind('adEnd', function () {
+            $("#analyticsLog").append("Ad Ended\n<br>").addClass('greenText');
+        })
+        kdp.kBind('postSequenceStart', function () {
+            $("#analyticsLog").append("Post Sequence Started\n<br>").addClass('greenText');
+        })
+        kdp.kBind('firstPlay', function () {
+            $("#analyticsLog").append("First Play\n<br>").addClass('greenText');
+        })
+        kdp.kBind('doPause', function () {
+            $("#analyticsLog").append("Player Paused\n<br>").addClass("greenText");
+        })
+        kdp.kBind('doPlay', function () {
+            $("#analyticsLog").append("Player Playing\n<br>").addClass('greenText');
+        })
+        kdp.kBind('mediaError', function () {
+            $("#analyticsLog").append("Media Error\n<br>").addClass("greenText");
+        })
+        kdp.kBind('bumperStarted', function () {
+            $("#analyticsLog").append("Bumper Started\n<br>").addClass("greenText");
+        })
+        kdp.kBind('postSequenceStart', function () {
+            $("#analyticsLog").append("Playing Post Sequence.\n<br>").addClass("greenText");
+        })
+    });
+</script>
+<script>
+    var preroll = "https://ads.e-planning.net/eb/4/175df/player/preroll?ct=1&o=v&ma=1&vv=3";
+    mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+    mw.setConfig('debug', false);
+    mw.setConfig("debugTarget", "analyticsLog");
+    mw.setConfig("autoScrollDebugTarget", true);
+    kWidget.embed({
+        "targetId": "kaltura_player_1466954509",
+        "wid": "_1955031",
+        "uiconf_id": 37558971,
+        "flashvars": {
+            "streamerType": "auto",
+            "ks":
+            "skipBtn": {
+                "plugin": true
+
+            },
+            "doubleClick": {
+                "plugin": false,
+                "adTagUrl": null,
+                "prerollUrl": preroll, //VAST trafficking
+                "postrollUrl": null,
+                "debugMode": true
+            }
+        },
+        "cache_st": 1466954509,
+        "entry_id": "1_5h7ont5v"
+    });
+</script>
+</body>
+
+</html>

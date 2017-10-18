@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vision KS Tester</title>
+</head>
+
+<body>
+
+<script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+<script src="https://cdnapisec.kaltura.com/p/1852881/sp/185288100/embedIframeJs/uiconf_id/31741182/partner_id/1852881"></script>
+<div id="kaltura_player_1466954509" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+    <span itemprop="name" content="Mad Max - Fury Road"></span>
+    <span itemprop="description" content=""></span>
+    <span itemprop="duration" content="153"></span>
+    <span itemprop="thumbnail" content="https://cfvod.kaltura.com/p/1852881/sp/185288100/thumbnail/entry_id/0_v00hxfk2/version/100032/acv/531"></span>
+    <span itemprop="width" content="560"></span>
+    <span itemprop="height" content="315"></span>
+</div>
+    <br>
+
+<script>
+    kWidget.addReadyCallback( function( playerId ){
+        var kdp = document.getElementById( playerId );
+        kdp.kBind( 'firstPlay', function() {
+            $("#analyticsLog").append(kdp.evaluate("Player Version: " + "{playerVersion}\n"));
+            $("#analyticsLog").append(kdp.evaluate("Entry Name: " + "{mediaProxy.entry.name}\n"));
+            $("#analyticsLog").append(kdp.evaluate("Entry Duration: " + "{mediaProxy.entry.duration}\n"));
+
+        })
+        kdp.kBind('doPause', function (){
+            $("#analyticsLog").append("Player Paused\n");
+
+        })
+        kdp.kBind('doPlay', function (){
+            $("#analyticsLog").append("Player Playing\n");
+        })
+        kdp.kBind('bufferStartEvent', function (){
+            $("#analyticsLog").append("Buffer Start\n");
+        })
+        kdp.kBind('bufferEndEvent', function (){
+            $("#analyticsLog").append("Buffer End\n");
+        })
+        kdp.kBind('playerError', function (errorObj){
+            debugger;
+        })
+    });
+</script>
+<script>
+    kWidget.addReadyCallback( function( playerId ) {
+        var kdp = document.getElementById(playerId);w
+        kdp.kBind('playerReady', function () {
+            $("#ksArea").append(kdp.evaluate('{configProxy.flashvars.ks}'));
+        })
+    })
+</script>
+
+<h3>Event monitor log:</h3><br>
+    <textarea id="analyticsLog" style="width:560px;height:200px; clear: both" ></textarea>
+</div>
+
+<br>
+<textarea id="ksArea" style="width:560px; height=20px;">
+
+</textarea>
+<br>
+
+<button id="hide">Generate Valid KS</button>
+
+
+<script>
+    mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+    mw.setConfig('debug', true);
+    kWidget.embed({
+        "targetId": "kaltura_player_1466954509",
+        "wid": "_1852881",
+        "uiconf_id": 31741182,
+        "flashvars": {
+            "streamerType": "auto",
+            "ks": "djJ8MTg1Mjg4MXwdDVkeLigunJunW45k5oPoNXkzcit-vvp3MUjINUGFScQCwoBj7EoaTrFF85BHNZXRAmhawfJDhHQMjutcCw57r5az_0uGntVKPmHUPFdEx5nFOmi3TjORfPoy7K-g9hMClBYqjHotkU8VfBhMJKfqTBG75obX04lrGzSAAFSZ-g==",
+            "hlsjs": {
+                "plugin": true
+            },
+            "LeadWithHLSOnJs": true,
+            'LeadWithHLSOnFlash': false
+        },
+        "cache_st": 1466954509,
+        "entry_id": "0_v00hxfk2",
+        'readyCallback': function (playerId) {
+            $("#hide").hide();
+            kdp = $('#' + playerId)[0];
+            console.log('KS Simulated');
+            kdp.kBind('freePreviewEnd', 'simulateKS');
+            //kdp.kBind('changeMedia', 'funcfreePreview');
+
+        }
+    });
+</script>
+<script type="text/javascript">
+    kWidget.addReadyCallback(function( playerId ) {
+        var kdp = document.getElementById(playerId);
+
+    });
+</script>
+</body>
+
+</html>

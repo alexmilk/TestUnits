@@ -1,0 +1,136 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<title>Test</title>
+	<style>
+		.intro {
+			font-size: 150%;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+<script src="http://cdnapi.kaltura.com/p/459791/sp/45979100/embedIframeJs/uiconf_id/24377482/partner_id/459791"></script>
+<div id="kaltura_player_1409274016" style="width: 600px; height: 369px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+</div>
+<script >
+	mw.setConfig( 'debug' , true );
+	function ValidaPago() {
+
+
+		console.log('Entre Pagado');
+		$("#hide").show();
+		$("#hide").click(function(){
+
+			$.get('http://www.kaltura.com/api_v3/?service=session&action=start&secret=ee41022cbff7195cc9ea2f6a20fcf2bf&partnerId=459791&type=user&privileges=sview:0_jm7k9vll&format=1', function (jqxhr) {
+				console.log(jqxhr);
+				kdp.setKDPAttribute('servicesProxy.kalturaClient', 'ks', jqxhr);
+				document.getElementById('myText').value = jqxhr;
+				kdp.removeJsListener('freePreviewEnd', 'ValidaPago');
+				kdp.addJsListener('changeMedia', 'onChangeMedia');
+
+			})
+
+		});
+
+	}
+
+
+	function onChangeMedia() {
+		kdp.removeJsListener('changeMedia', 'onChangeMedia');
+		console.log('Entre OnChange');
+
+		kdp.evaluate('{servicesProxy.kalturaClient.ks}');
+		runPlaybackWithValidatedKS();
+		//kdp.addJsListener('playerSeekEnd', 'onDoSeek');
+
+
+	}
+
+	function runPlaybackWithValidatedKS() {
+		console.log('+ - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + -');
+		kdp.sendNotification( 'doPlay' );
+		kdp.sendNotification( 'doSeek',10 );
+		//kdp.addJsListener('playerSeekEnd', 'OnDoSeek' );
+
+	//kdp.addJsListener('playerUpdatePlayhead', 'checkTestDone' );
+
+
+	}
+
+	function checkTestDone() {
+		console.log('checkTestDone');
+		l = kdp.evaluate('{video.player.currentTime}');
+		console.log(l);
+		if (kdp.evaluate('{video.player.currentTime}') > 9.8) {
+			console.log('checkTIF');
+			kdp.removeJsListener('playerUpdatePlayhead', 'checkTestDone');
+			kdp.addJsListener('playerSeekEnd', 'onDoSeek' );
+
+
+		}
+
+
+	}
+
+	function OnDoSeek() {
+
+
+		console.log('Ondo');
+		kdp.sendNotification( 'doPlay' );
+		setTimeout(function(){
+			kdp.sendNotification( 'doPlay' );
+		},1000);
+
+
+	}
+
+
+
+	//                                    Azteca 13 vod
+
+	kWidget.embed({
+		"targetId": "kaltura_player_1409274016",
+		"wid": "_459791",
+		"uiconf_id": 24377482,
+		"cache_st": 1409274016,
+		"entry_id": "0_jm7k9vll",
+		flashvars: {
+			"autoPlay": true,
+			"autoMute": false,
+			"scrubber.plugin": true,
+			"localizationCode": "es",
+			"akamaiHD": {
+				"loadingPolicy": "preInitialize",
+				"asyncInit": "true"
+			},
+		},
+		'readyCallback': function (playerId) {
+			$("#hide").hide();
+			kdp = $('#' + playerId)[0];
+			console.log('Entre Call');
+			kdp.kBind('freePreviewEnd', 'ValidaPago');
+			//kdp.kBind('changeMedia', 'funcfreePreview');
+
+		}
+
+	});
+
+
+</script>
+
+<script>
+
+
+
+</script>
+
+<button id="hide">Simular Compra</button>
+<br>
+<br>
+Genera KS <input type="Text" name="numCaracteres" id="myText" size="40">
+
+</body>
+</html>

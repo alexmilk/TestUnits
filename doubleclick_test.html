@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>KALTURA - DOUBLECLICK PLUGIN</title>
+	</head>
+
+	<body>
+		<div id="kaltura_player_1458158827" style="width: 645px; height: 362px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
+		<script src="http://cdnapi.kaltura.com/p/1034971/sp/103497100/embedIframeJs/uiconf_id/34180381/partner_id/1034971"></script>
+		<script>
+		var mediaProxyEntry = {
+	'entryCuePoints': [{
+		/*
+		CUSTOM = 0;
+		VAST = 1; *Recommeded Protocol Type*
+		VAST_2_0 = 2;
+		VPAID = 3;
+		*/
+		"protocolType": 1,
+		/*
+		VIDEO : String = '1';
+		OVERLAY : String = '2';
+		*/
+		"adType": 1, 
+		"cuePointType": "adCuePoint.Ad",
+		"startTime": 10000, //milliseconds
+		"sourceUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu={configProxy.flashvars.ADZONE}&impl=s&gdfp_req=1&env=vp&output=vast&vad_type=linear&unviewed_position_start=1&vpos=preroll&cust_params=video_tags%3D{configProxy.flashvars.TAGS}&correlator={utility.timestamp}" //AdTag Url
+	}]
+}
+			kWidget.embed({
+			    "targetId": "kaltura_player_1458158827",
+			    "wid": "_1034971",
+			    "uiconf_id": 34180381,
+			    "entry_id": "1_krhx4wcg",
+			    "autoPlay": false,
+			    "flashvars": {
+					"doubleClick": {
+						"prerollUrl": null,
+						"adTagUrl": "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&cust_params=sample_ar%3Dpremidpost&cmsid=496&vid=short_onecue&correlator=",
+						"leadWithFlash": false,
+						"trackCuePoints": true
+				},
+					"ADZONE": '/4160/mv.inctest',
+					"TAGS": 'dfp_video_test',
+					"mediaProxy": mediaProxyEntry, //mediaProxy var name
+				}
+			});
+		</script>
+
+	</body>
+</html>
+

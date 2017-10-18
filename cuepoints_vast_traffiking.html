@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vast Traffiking Debugging</title>
+</head>
+<body>
+<script src="http://cdnapi.kaltura.com/p/1666321/sp/166632100/embedIframeJs/uiconf_id/34356981/partner_id/1666321"></script>
+	<div id="kaltura_player_1460032511" style="width: 560px; height: 395px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+	<span itemprop="name" content="Bugatti Vision Gran Turismo: Unveiled"></span>
+	<span itemprop="description" content=""></span>
+	<span itemprop="duration" content="193"></span>
+	<span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1666321/sp/166632100/thumbnail/entry_id/1_ectaz4lo/version/100011/acv/141"></span>
+	<span itemprop="width" content="560"></span>
+	<span itemprop="height" content="395"></span>
+	</div>
+<script>
+var mediaProxyEntry = {
+	'entryCuePoints': [{
+		/*
+		CUSTOM = 0;
+		VAST = 1; *Recommeded Protocol Type*
+		VAST_2_0 = 2;
+		VPAID = 3;
+		*/
+		"protocolType": 1,
+		/*
+		VIDEO : String = '1';
+		OVERLAY : String = '2';
+		*/
+		"adType": 1, 
+		"cuePointType": "adCuePoint.Ad",
+		"startTime": 10000, //milliseconds
+		"startTime": 20000, //milliseconds
+		"sourceUrl": "https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=is&c=23&pl=VAST&pli=14602547&PluID=0&pos=9562&ord=[timestamp]&cim=1" //AdTag Url
+	}]
+}
+kWidget.embed({
+	"targetId": "kaltura_player_1460032511",
+	"wid": "_1666321",
+	"uiconf_id": 34356981,
+	"flashvars": {
+	"streamerType": "auto",	
+	"doubleClick": {
+		"plugin": true,
+		"adTagUrl": null,
+		"prerollUrl": "https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=is&c=23&pl=VAST&pli=14602547&PluID=0&pos=9562&ord=[timestamp]&cim=1",
+		"leadWithFlash": false,
+		"trackCuePoints": true
+},
+"ADZONE": '/4160/mv.inctest',
+"TAGS": 'dfp_video_test'
+},
+"cache_st": 1460032511,
+"entry_id": "1_ectaz4lo"
+});
+</script>
+</body>
+</html>

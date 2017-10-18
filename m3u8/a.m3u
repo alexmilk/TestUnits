@@ -1,0 +1,12 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:BANDWIDTH=4464671,RESOLUTION=1280x720
+http://kalplay.kaltura.com:80/p/931702/manifest/rendition/a.m3u8?entryId=1_oorxcge2&uiConfId=28200491&uiConfConfigId=dbead6f6e94c4a314f27ad0670b49c6e&playerConfig=%7B%22sessionId%22:%22.time().%22%7D&renditionId=3a49b3b6fb2b1f1d9e73b0de9c6b323a&master=aHR0cDovL2thbHNlZ2xpdmUtYS5ha2FtYWloZC5uZXQ6ODAvZGMtMS9tL255LWxpdmUtcHVibGlzaDQva0xpdmUvc21pbDoxX29vcnhjZ2UyX2FsbC5zbWlsL3BsYXlsaXN0Lm0zdTg%3D&sessionId=.time().&sessionStartTime=1478101765&originDc=ny
+#EXT-X-STREAM-INF:BANDWIDTH=1272915,RESOLUTION=480x270
+http://kalplay.kaltura.com:80/p/931702/manifest/rendition/a.m3u8?entryId=1_oorxcge2&uiConfId=28200491&uiConfConfigId=dbead6f6e94c4a314f27ad0670b49c6e&playerConfig=%7B%22sessionId%22:%22.time().%22%7D&renditionId=c8fa4188dd3c9b094d212ad97f91b509&master=aHR0cDovL2thbHNlZ2xpdmUtYS5ha2FtYWloZC5uZXQ6ODAvZGMtMS9tL255LWxpdmUtcHVibGlzaDQva0xpdmUvc21pbDoxX29vcnhjZ2UyX2FsbC5zbWlsL3BsYXlsaXN0Lm0zdTg%3D&sessionId=.time().&sessionStartTime=1478101765&originDc=ny
+#EXT-X-STREAM-INF:BANDWIDTH=1716302,RESOLUTION=640x360
+http://kalplay.kaltura.com:80/p/931702/manifest/rendition/a.m3u8?entryId=1_oorxcge2&uiConfId=28200491&uiConfConfigId=dbead6f6e94c4a314f27ad0670b49c6e&playerConfig=%7B%22sessionId%22:%22.time().%22%7D&renditionId=5534f51ed4f10694feadd8077f1663f6&master=aHR0cDovL2thbHNlZ2xpdmUtYS5ha2FtYWloZC5uZXQ6ODAvZGMtMS9tL255LWxpdmUtcHVibGlzaDQva0xpdmUvc21pbDoxX29vcnhjZ2UyX2FsbC5zbWlsL3BsYXlsaXN0Lm0zdTg%3D&sessionId=.time().&sessionStartTime=1478101765&originDc=ny
+#EXT-X-STREAM-INF:BANDWIDTH=2469354,RESOLUTION=640x360
+http://kalplay.kaltura.com:80/p/931702/manifest/rendition/a.m3u8?entryId=1_oorxcge2&uiConfId=28200491&uiConfConfigId=dbead6f6e94c4a314f27ad0670b49c6e&playerConfig=%7B%22sessionId%22:%22.time().%22%7D&renditionId=86d93c4cc025f1e7d3d3970813ffc44a&master=aHR0cDovL2thbHNlZ2xpdmUtYS5ha2FtYWloZC5uZXQ6ODAvZGMtMS9tL255LWxpdmUtcHVibGlzaDQva0xpdmUvc21pbDoxX29vcnhjZ2UyX2FsbC5zbWlsL3BsYXlsaXN0Lm0zdTg%3D&sessionId=.time().&sessionStartTime=1478101765&originDc=ny
+
+

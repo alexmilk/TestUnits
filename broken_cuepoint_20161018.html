@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<title>Kaltura Test</title>
+	</head>
+	<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnapisec.kaltura.com/p/331501/sp/33150100/embedIframeJs/uiconf_id/36458191/partner_id/331501"></script>
+	<div id="kaltura_player" style="width:400px;height:330px;"></div>
+	
+	<script>
+		var consoleAvailable = true;	
+		try { 
+			console.log("console open")
+		} catch(err){
+			consoleAvailable = false;
+		}
+
+		var mediaProxyEntry = {
+				'entryCuePoints': [
+					{
+						"cuePointType":"codeCuePoint.Code",
+						"startTime": 10000,
+						"sourceUrl": "http://localhost/tests/hi.js",
+						"description": "THIS NEVER TRIGGERS"
+					},
+
+
+
+
+				{
+					"protocolType": 1,
+					"adType": 1, 
+					"cuePointType": "adCuePoint.Ad",
+					"startTime": 5936,
+					"sourceUrl": "http://localhost/tests/hi.js"
+					}]
+			}
+
+
+
+		$(document).ready(embedVideo);
+		function embedVideo(){
+			if(consoleAvailable){ console.log("embedVideo"); }
+			mw.setConfig( 'debug' , true ); //Should enable setConfig debug or 'debugKalturaPlayer' in the browser directly.
+		    kWidget.embed({
+
+		        'targetId': 'kaltura_player',
+				'wid': '_331501',
+				'uiconf_id' : '36458191',
+		        'entry_id' : '1_u0o9e18k',
+
+		        'flashvars':{
+					'vast':{ 'trackCuePoints': true },
+			 		'mediaProxy': mediaProxyEntry
+		        },
+
+
+		        'readyCallback':function(playerID) { 
+		        	console.log("readyCallback"); 
+		        	
+		        	var kdp = document.getElementById(playerID);
+			        
+			        var events = ['playerReady','mediaLoaded','mediaError','cuePointsReceived','cuePointReached','playerStateChange','firstPlay','adClick','adErrorEvent','adOpportunity',
+			        				'AdSupport_EndAdPlayback','AdSupport_StartAdPlayback','midSequenceComplete','midSequenceStart','onAdComplete','onAdPlay','onAdSkip',
+									'postSequenceComplete','postSequenceStart','preSequenceComplete','preSequenceStart','KalturaSupport_CuePointReached',
+									'KalturaSupport_AdOpportunity'];
+
+			        for ( var i=0; i < events.length; i++ ){(function(i) {
+			                kdp.kBind( events[i], function(event){
+			                	if(consoleAvailable){console.log('Kaltura player event triggered: ' + events[i] + ', event data: ' + JSON.stringify(event));}
+			                });
+			            })(i);
+			        }
+
+		        }
+			});
+		}
+	</script>
+
+
+
+
+
+
+	</body>
+</html>

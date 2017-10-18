@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TheChive Tester</title>
+</head>
+
+<body>
+
+<script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+<script src="http://cdnapi.kaltura.com/html5/html5lib/v2.50/mwEmbedLoader.php/p/1289861/sp/128986100/embedIframeJs/uiconf_id/34472562/partner_id/1289861"></script>
+<h3 style="margin-bottom: 20px;">Resignation Media adtag tester</h3>
+<div id="kaltura_player_1466954509" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+    <span itemprop="name" content="Mad Max - Fury Road"></span>
+    <span itemprop="description" content=""></span>
+    <span itemprop="duration" content="153"></span>
+    <span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1289861/sp/128986100/thumbnail/entry_id/0_2bbhwv5u/version/100032/acv/531"></span>
+    <span itemprop="width" content="560"></span>
+    <span itemprop="height" content="315"></span>
+</div>
+    <br>
+
+<script>
+    kWidget.addReadyCallback( function( playerId ){
+        var kdp = document.getElementById( playerId );
+        kdp.kBind( 'firstPlay', function() {
+            $("#analyticsLog").append(kdp.evaluate("Player Version: " + "{playerVersion}\n"));
+            $("#analyticsLog").append(kdp.evaluate("Entry Name: " + "{mediaProxy.entry.name}\n"));
+            $("#analyticsLog").append(kdp.evaluate("Entry Duration: " + "{mediaProxy.entry.duration}\n"));
+
+        })
+        kdp.kBind('doPause', function (){
+            $("#analyticsLog").append("Player Paused\n");
+
+        })
+        kdp.kBind('doPlay', function (){
+            $("#analyticsLog").append("Player Playing\n");
+        })
+//        kdp.kBind('bufferStartEvent', function (){
+//            $("#analyticsLog").append("Buffer Start\n");
+//        })
+//        kdp.kBind('bufferEndEvent', function (){
+//            $("#analyticsLog").append("Buffer End\n");
+//        })
+        kdp.kBind('mediaError', function (){
+            $("#analyticsLog").append("Media Error\n");
+        })
+        kdp.kBind('bumperStarted', function (){
+            $("#analyticsLog").append("Bumper Started\n");
+        })
+        kdp.kBind('postSequenceStart', function (){
+            $("#analyticsLog").append("Playing Post Sequence.\n");
+        })
+    });
+
+</script>
+<h3>Event monitor log:</h3><br>
+    <textarea id="analyticsLog" style="width:700px;height:400px;" ></textarea>
+</div>
+<script>
+    mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+    mw.setConfig('debug', true);
+    mw.setConfig("debugTarget", "analyticsLog");
+    mw.setConfig("autoScrollDebugTarget", true);
+    kWidget.embed({
+        "targetId": "kaltura_player_1466954509",
+        "wid": "_1289861",
+        "uiconf_id": 34472562,
+        "flashvars": {
+            "streamerType": "auto",
+            "bumper.plugin": false
+        },
+        "cache_st": 1466954509,
+        "entry_id": "0_2bbhwv5u"
+    });
+
+</script>
+</body>
+
+</html>

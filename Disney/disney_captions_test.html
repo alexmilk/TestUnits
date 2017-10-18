@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Kaltura Playout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src='backstage.js'></script>
+    <style>
+        .backStageContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script src="http://cdnapi.kaltura.com/p/1082342/sp/108234200/embedIframeJs/uiconf_id/39803291/partner_id/1082342"></script>
+<div id="kaltura_player" style="width: 702px; height: 395px;"></div>
+<script>
+    kWidget.embed({
+        "targetId": "kaltura_player",
+        "wid": "_" + 1082342,
+        "uiconf_id": 39803291,
+        "flashvars": {
+            "streamerType": "auto",
+            'Kaltura.LeadHLSOnAndroid': true,
+            'closedCaptions': {
+                'plugin': true,
+                'hideWhenEmpty': false,
+                'showEmbeddedCaptions': false
+            },
+            'liveCore.disableLiveCheck': true,
+            'metadataProfileId': '244381',
+            //'EmbedPlayer.WebKitPlaysInline': false,
+            //'EmbedPlayer.EnableIpadNativeFullscreen': true,
+            'EmbedPlayer.EnableIpadHTMLControls': false,
+            "IframeCustomPluginCss1" : "matterhorn-static-player-skin.css",            'LeadWithHLSOnJs': true, 'hlsjs': { 'plugin': true }  },
+        'referrer': 'http://disney.com',
+        "cache_st": Date.now(),
+        'playsinline': false,
+        "entry_id": "1_arr0shzi"
+    });
+
+    $(document).keydown(function(e) {
+        backStageCode.processKey(e);
+    });
+</script>
+
+
+<!--<script>-->
+
+    <!--function jsCallbackReady(objectId) {-->
+        <!--window.kdp = document.getElementById(objectId);-->
+    <!--}-->
+
+    <!--window.onload = function() {-->
+        <!--var entryMetadata = kdp.evaluate('{mediaProxy.entryMetadata}'),-->
+            <!--entry = kdp.evaluate('{mediaProxy.entry}'),-->
+            <!--backstage = '';-->
+
+        <!--if (backstage !== null && backstage == 1) {-->
+            <!--backStageCode.showBackStage();-->
+        <!--}-->
+        <!--$('#entryName').text(entry['name'] + ' (' + entry['id'] + ')');-->
+        <!--flavorArray = kdp.evaluate('{mediaProxy.kalturaMediaFlavorArray}');-->
+        <!--flavorArrayString = '';-->
+        <!--$.each(flavorArray, function(key, value) {-->
+            <!--if (value['data-bandwidth'] != null && !value['data-tags'].includes('audio_only')) {-->
+                <!--flavorArrayString += (value['data-bandwidth'] / 1024).toFixed(0) + ", ";-->
+            <!--}-->
+        <!--});-->
+        <!--$('#availableBitrates').text(flavorArrayString);-->
+    <!--}-->
+
+    <!--kWidget.addReadyCallback(function( playerId ){-->
+        <!--kdp.kBind('bufferProgress', function(event){-->
+            <!--$('#bufferProgress').text(event.newTime + " sec");-->
+            <!--$('#buffered').text((kdp.evaluate("{video.buffer.percent}") * 100 ).toFixed(2));-->
+        <!--});-->
+        <!--/* kdp.kBind('bufferStartEvent', function(){-->
+         <!--$('.bufferEvents').prepend( "bufferStartEvent\n");-->
+         <!--});-->
+         <!--kdp.kBind('bufferEndEvent', function(event){-->
+         <!--// to access buffer duration you can read the event object or evaluate against mediaProxy-->
+         <!--// for the latest buffer duration both in float seconds.-->
+         <!--var bufferDuration = event.bufferDuration || kdp.evaluate("{video.buffer.duration}");-->
+         <!--$('.bufferEvents').prepend( "bufferEndEvent: bufferrTime: " + bufferDuration + " currentTime: " +-->
+         <!--kdp.evaluate("{video.player.currentTime}") + "\n" );-->
+         <!--});-->
+         <!--kdp.kBind('playerReady', function () {-->
+         <!--let player = parent.document.kaltura_player_ifp.kaltura_player.getPlayerElement();-->
+         <!--player.removeAttribute('playsinline');-->
+         <!--});-->
+         <!--*/-->
+        <!--kdp.kBind('playerStateChange', function(event) {-->
+            <!--$('#playerState').text(event);-->
+        <!--});-->
+
+        <!--kdp.kBind('playerPlayed', function() {-->
+            <!--$('#playerState').text('playing');-->
+        <!--});-->
+
+        <!--kdp.kBind("hlsCurrentBitrate", function( data ){-->
+            <!--$('#currentBitrate').text(data);-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>

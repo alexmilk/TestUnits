@@ -1,0 +1,54 @@
+<script type="text/javascript" src="http://player.kaltura.com/tests/qunit/qunit-bootstrap.js"></script>
+
+
+
+<script src="http://cdnapi.kaltura.com/p/1296091/sp/129609100/embedIframeJs/uiconf_id/29383901/partner_id/1296091"></script>
+<div id="kaltura_player_1459775009" style="width: 560px; height: 395px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+<span itemprop="name" content="Amit Climb - 24/5/14"></span>
+<span itemprop="description" content=""></span>
+<span itemprop="duration" content="377"></span>
+<span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1296091/sp/129609100/thumbnail/entry_id/1_7do8avii/version/100031/acv/231"></span>
+<span itemprop="width" content="560"></span>
+<span itemprop="height" content="395"></span>
+</div>
+<script>
+$('#testLongCompanion').text('( long companion target )');
+$('#testCompanion').text( '( companion target )' );
+
+
+kWidget.embed({
+"targetId": "kaltura_player_1459775009",
+"wid": "_1296091",
+"uiconf_id": 29383901,
+"flashvars": {
+"streamerType": "auto",
+"vast": {
+				"prerollUrl" : "http://projects.kaltura.com/mdale/hotelVastAd.xml?myRefurl=http%3A//myref.com/%3Ffoo%3Dbar%26cat%3Ddog{utility.nativeAdId}",
+				"numPreroll" : "1",
+				"preSequence" : "1",
+				"htmlCompanions" : "testCompanion:300:250;testLongCompanion:728:90;",
+				"timeout" : "4",
+				"storeSession" : false,
+				"skipOffset" : "5",
+				"unescapeAdUrls" : false
+			}
+},
+"readyCallback": function( playerId ){
+			$p = $( '#' + playerId );
+			// remove existing
+			$( '#testLongCompanion,#testCompanion').remove();
+			// add the companion targets after player ready to place them in the correct location: 
+			$p.before('<div id="testLongCompanion" style="float:left;width:710px;height:90px;;border:solid thin black;padding:5px;margin:5px;"> ( long companion target )</div>' +
+				'<div style="clear:both">'
+			);
+			$p.after('<div id="testCompanion" style="width:300px;height:250px;float:left;border:solid thin black;padding:5px;margin:5px;"> ( companion target ) </div>')
+			
+			$p[0].kBind('adClick', function(){
+				kWidget.log('vast:: adClick event');
+			})
+},
+
+"cache_st": 1459775009,
+"entry_id": "1_7do8avii"
+});
+</script>

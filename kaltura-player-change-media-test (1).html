@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kaltura Player Change Media Test</title>
+    </head>
+    <body>
+        <script src="https://cdnapisec.kaltura.com/p/1897241/sp/189724100/embedIframeJs/uiconf_id/39359371/partner_id/1897241"></script>
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <div id="kaltura_player_1500647590" style="width: 560px; height: 395px;"></div>
+        <script>
+            kWidget.embed({
+                "targetId": "kaltura_player_1500647590",
+                "wid": "_1897241",
+                "uiconf_id": 39359371,
+                "flashvars": {
+                    "autoPlay": true,
+//                    "id3Tag.plugin": false,
+//                    "statistics.plugin": false,
+//                    "kAnalony.plugin": false,
+//                    "liveCore.disableLiveCheck": true,
+//                    "liveAnalytics.plugin": false,
+                    "disableHLSOnJs": false,
+                    "doubleClick": {
+                        "enableCountDown": true,
+                        "pauseAdOnClick": true,
+                        "countdownText": "ADVERTISEMENT",
+                        "disableCompanionAds": false,
+                        "htmlCompanions": "",
+                        "adsManagerLoadedTimeout": 5000,
+                        "leadWithFlash": false,
+                        "debugMode": false,
+                        "plugin": true,
+                        "adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=",
+                        "contentId": "{mediaProxy.entry.id}",
+                        "cmsId": "5858"
+                    },
+                    "streamerType": "auto"
+                },
+                "cache_st": 1500647590,
+                "entry_id": "0_aqscy76n"
+            });
+
+            var adTimeout = 300000; // 10 seconds
+
+            kWidget.addReadyCallback(function(id) {  
+                var kdp = document.getElementById(id); 
+
+                kdp.kBind('adEnd', function() {                    
+                    setTimeout(function() {
+                        kdp.sendNotification("changeMedia", { "entryId" : "0_aqscy76n" });
+                        }, adTimeout);                
+                });
+            });
+            $(document).ready(function () {
+              $("body").append("<br><button onClick=changeMedia()>ChangeMedia</button>");
+            });
+            function changeMedia(){
+                var kdp = kaltura_player_1500647590;
+                kdp.sendNotification("changeMedia", { "entryId" : "0_aqscy76n" })
+            };
+        </script>  
+    </body>
+</html>

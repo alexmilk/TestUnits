@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<VAST version="2.0">
+    <Ad id="1gossf">
+        <InLine>
+            <AdSystem>Innovid Ads</AdSystem>
+            <AdTitle><![CDATA[YETI_FATHERSDAY_ANTHEM_15_WORDS_v2]]></AdTitle>
+            <Impression><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=init]]></Impression>
+            <Impression><![CDATA[http://dts.innovid.com/placement/1gossf/uuid?cb=03d32a2f-2577-be77-4862-955cd7ca1dc2]]></Impression>
+            <Creatives>
+                <Creative>
+                    <Linear >
+                        <Duration>00:00:15</Duration>
+                        <TrackingEvents>
+                            <Tracking event="start"><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=play]]></Tracking>
+<Tracking event="start"><![CDATA[http://core.insightexpressai.com/adServer/adServerESI.aspx?bannerID=770177&siteID=1931&creativeID=1gossf&placementID=198205&script=false&redir=https://secure.insightexpressai.com/adserver/1pixel.gif]]></Tracking>
+<Tracking event="start"><![CDATA[http://secure-gl.imrworldwide.com/u/ad?ca=35363&cr=121716&ce=1931-innovid&pc=198205&am=52&tt=5&r=1468330476076]]></Tracking>
+<Tracking event="start"><![CDATA[https://ad.doubleclick.net/ddm/ad/N3382.1971709CARBONMEDIA/B9521334.129786954;sz=1x1;ord=1468330476076;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?]]></Tracking>
+<Tracking event="firstQuartile"><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=vpoint&event_id=percent&event_value=25]]></Tracking>
+<Tracking event="midpoint"><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=vpoint&event_id=percent&event_value=50]]></Tracking>
+<Tracking event="thirdQuartile"><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=vpoint&event_id=percent&event_value=75]]></Tracking>
+<Tracking event="complete"><![CDATA[http://s.innovid.com/1x1.gif?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=vpoint&event_id=percent&event_value=100]]></Tracking>
+
+                        </TrackingEvents>
+                        <VideoClicks>
+                            <ClickThrough><![CDATA[http://service.innovid.com/vclk/index.php?project_hash=1hhm1c&client_id=166&video_id=121716&channel_id=175118&publisher_id=1931&placement_tag_id=0&project_state=2&r=1468330476076&placement_hash=1gossf&action=clktru&click=https%3A%2F%2Fad.doubleclick.net%2Fddm%2Fclk%2F305788996%3B129786954%3Bp]]></ClickThrough>
+                            
+                        </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" width="16" height="9" type="video/x-flv" bitrate="728"><![CDATA[http://static.innovid.com/media/encoded/06_16/18863/1_source_29712_47122.flv]]></MediaFile><MediaFile delivery="progressive" width="16" height="9" type="video/mp4" bitrate="800"><![CDATA[http://static.innovid.com/media/encoded/06_16/18863/2_source_29712_47122.mp4]]></MediaFile><MediaFile delivery="progressive" width="16" height="9" type="video/webm" bitrate="1024"><![CDATA[http://static.innovid.com/media/encoded/06_16/18863/3_source_29712_47122.webm]]></MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+                
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>

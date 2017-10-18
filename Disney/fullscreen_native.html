@@ -1,0 +1,155 @@
+
+<html>
+<head>
+    <title>Kaltura Playout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src='http://video-batch-fc.disneyinternational.com/phil-test/play/backstage.js'></script>
+    <style>
+        .backStageContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script src="https://cdnapisec.kaltura.com/p/1082342/sp/108234200/embedIframeJs/uiconf_id/39857001/partner_id/1082342"></script>
+<div id="kaltura_player" style="width: 948px; height: 395px;"></div>
+<script>
+    kWidget.embed({
+        "targetId": "kaltura_player",
+        "wid": "_" + 1082342,
+        "uiconf_id": 39857001,
+        "flashvars": {
+            "streamerType": "auto",
+            'Kaltura.LeadHLSOnAndroid': true,
+            'EmbedPlayer.ExternalFullScreenControl': false,
+            'liveCore.disableLiveCheck': true,
+            'matterhornFullscreenDfp': {
+                'isDfp': true,
+                'plugin': false
+            },
+            'fullScreenBtn': {
+                'plugin': true,
+                'visible': true
+            },
+            'metadataProfileId': '244381',
+            'EmbedPlayer.NativeControls': false,
+            'EmbedPlayer.WebKitPlaysInline': false,
+            'EmbedPlayer.EnableIpadNativeFullscreen': false,
+            IframeCustomPluginCss1: "http://video-batch-fc.disneyinternational.com/phil-test/kaltura-intl-mh-player/matterhorn-static-player-skin.css",
+            IframeCustomPluginCss2: "http://video-batch-fc.disneyinternational.com/phil-test/kaltura-intl-mh-player/fskRatingsPlugin.css",
+            IframeCustomPluginJs1: "http://video-batch-fc.disneyinternational.com/phil-test/kaltura-intl-mh-player/fskRatingsPlugin.js",
+            IframeCustomPluginJs2: "http://video-batch-fc.disneyinternational.com/phil-test/kaltura-intl-mh-player/matterhornOverlayDfp.js",
+            'LeadWithHLSOnJs': true,
+            'hlsjs': {
+                'plugin': true
+            }
+            },
+        'referrer': 'http://disney.com',
+        "cache_st": Date.now(),
+        "entry_id": "1_06gu55c7"
+    });
+
+    $(document).keydown(function(e) {
+        backStageCode.processKey(e);
+    });
+</script>
+<div class='backStageContainer'>
+    <div class='backStageRow'>
+        <span class='backStageItem' id='entryName'></span>
+    </div>
+    <div class='backStageRow'>
+        Player State: <span class='backStageItem' id='playerState'></span>
+    </div>
+    <div class='backStageRow'>
+        Buffer Progress: <span class='backStageItem' id='bufferProgress'></span>
+    </div>
+    <div class='backStageRow'>
+        Buffered: <span class='backStageItem' id='buffered'></span>
+    </div>
+    <div class='backStageRow'>
+        Current Bitrate: <span class='backStageItem' id='currentBitrate'></span>
+    </div>
+    <div class='backStageRow'>
+        Available Bitrates: <span class='backStageItem' id='availableBitrates'></span>
+    </div>
+    <div class='backStageRow'>
+        <h3>Supported Params:</h3>
+        id (entry_id, shortcuts for livestream: delive/eslive/trlive)<br />
+        env ('stage', leaving blank defaults to production)<br />
+        uiconf (player id)<br />
+        backstage (brings up this interface on page load)<br />
+        https ('false' to force over http)<br />
+        audioselector ('true' brings up audio language options in select players only)<br />
+        hls ('false' to force over Flash)<br />
+        adverts ('dfp' to force pre-roll)<br />
+        ratio ('2.66:1', '2.40:1' or '2.35:1' for cinemascope. '2.40:1' for Studio trailers, 2.66:1 for Project Inc)<br />
+        styleoverride (set to 'true' to use local CSS and JS files)
+    </div>
+    <div class="backStageRow">
+        <h3>common</h3>
+        US Players (staging): 35673902 39803291 <br />
+        US Players (production): 35976132 <br />
+        INTL Players (staging): 27077261 39857001 <br />
+        INTL Players (production): 27176231
+    </div>
+    <div class="backStageRow">
+        <h3>iframe embed</h3>
+        <textarea cols="80" rows="8"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1082342/sp/108234200/embedIframeJs/uiconf_id/39857001/partner_id/1082342?iframeembed=true&playerId=kaltura_player&entry_id=1_06gu55c7&flashvars[localizationCode]=en&amp;&wid=1_06gu55c7" width="702" height="395" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe></textarea>
+    </div>
+</div>
+
+<script>
+
+    function jsCallbackReady(objectId) {
+        window.kdp = document.getElementById(objectId);
+    }
+
+    window.onload = function() {
+        var entryMetadata = kdp.evaluate('{mediaProxy.entryMetadata}'),
+            entry = kdp.evaluate('{mediaProxy.entry}'),
+            backstage = '';
+
+        if (backstage !== null && backstage == 1) {
+            backStageCode.showBackStage();
+        }
+        $('#entryName').text(entry['name'] + ' (' + entry['id'] + ')');
+        flavorArray = kdp.evaluate('{mediaProxy.kalturaMediaFlavorArray}');
+        flavorArrayString = '';
+        $.each(flavorArray, function(key, value) {
+            if (value['data-bandwidth'] != null && !value['data-tags'].includes('audio_only')) {
+                flavorArrayString += (value['data-bandwidth'] / 1024).toFixed(0) + ", ";
+            }
+        });
+        $('#availableBitrates').text(flavorArrayString);
+    };
+
+    kWidget.addReadyCallback(function( playerId ){
+        kdp.kBind('bufferProgress', function(event){
+            $('#bufferProgress').text(event.newTime + " sec");
+            $('#buffered').text((kdp.evaluate("{video.buffer.percent}") * 100 ).toFixed(2));
+        });
+        /* kdp.kBind('bufferStartEvent', function(){
+         $('.bufferEvents').prepend( "bufferStartEvent\n");
+         });
+         kdp.kBind('bufferEndEvent', function(event){
+         // to access buffer duration you can read the event object or evaluate against mediaProxy
+         // for the latest buffer duration both in float seconds.
+         var bufferDuration = event.bufferDuration || kdp.evaluate("{video.buffer.duration}");
+         $('.bufferEvents').prepend( "bufferEndEvent: bufferrTime: " + bufferDuration + " currentTime: " +
+         kdp.evaluate("{video.player.currentTime}") + "\n" );
+         }); */
+        kdp.kBind('playerStateChange', function(event) {
+            $('#playerState').text(event);
+        });
+
+        kdp.kBind('playerPlayed', function() {
+            $('#playerState').text('playing');
+        });
+
+        kdp.kBind("hlsCurrentBitrate", function( data ){
+            $('#currentBitrate').text(data);
+        });
+    });
+</script>
+</body>
+</html>

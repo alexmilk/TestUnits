@@ -1,0 +1,38 @@
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vast2.xsd" version="2.0.0">
+    <Ad id="BC0">
+        <InLine>
+            <AdSystem>DART</AdSystem>
+            <AdTitle>Video Cloud VAST Overlay Ad</AdTitle>
+            <Description>VAST Example of video overlay ad with JPEG creative. Equivalent to Video Cloud format number 1.</Description>
+            <Impression>
+                <![CDATA[http://ads.example.com/impression?;trackPoint=start;frmt=0;duration=13]]>
+            </Impression>
+            <Creatives>
+                <Creative AdID="BCID9001000">
+                    <NonLinearAds>
+                        <TrackingEvents>
+                            <Tracking event="start">
+                                <![CDATA[http://ads.example.com/tracking?;trackPoint=start;frmt=0]]>
+                            </Tracking>
+                            <Tracking event="midpoint">
+                                <![CDATA[http://ads.example.com/tracking?;trackPoint=midpoint;frmt=0]]>
+                            </Tracking>
+                            <Tracking event="complete">
+                                <![CDATA[http://ads.example.com/tracking?;trackPoint=complete;frmt=0]]>
+                            </Tracking>
+                        </TrackingEvents>
+                        <NonLinear id="overlay" minSuggestedDuration="00:00:02" width="480" height="90" scalable="true" maintainAspectRatio="true">
+                            <StaticResource creativeType="image/png">
+                                <![CDATA[http://www.business-review.eu/wp-content/uploads/2013/11/3Telecom-banner-480x90.jpg]]>
+                            </StaticResource>
+	            <NonLinearClickThrough>
+	                        <![CDATA[http://www.ibm.com]]>
+	                    </NonLinearClickThrough>
+                        </NonLinear>
+                    </NonLinearAds>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>

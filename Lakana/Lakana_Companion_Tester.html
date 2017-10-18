@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Configuring VAST Trafficking against the DoubleClick plugin.</title>
+</head>
+<body>
+
+<script type="text/javascript" src="//s0.2mdn.net/instream/html5/gpt_proxy.js"></script>
+<script type='text/javascript'>
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	(function() {
+		var gads = document.createElement('script');
+		gads.async = true;
+		gads.type = 'text/javascript';
+		gads.src = '//www.googletagservices.com/tag/js/gpt.js';
+		var node = document.getElementsByTagName('script')[0];
+		node.parentNode.insertBefore(gads, node);
+	})();
+</script>
+<script type='text/javascript'>
+	googletag.cmd.push(function() {
+		// Supply YOUR_NETWORK and YOUR_UNIT_PATH.
+		googletag.defineSlot('/YOUR_NETWORK/YOUR_UNIT_PATH', [300, 250], 'testCompanionSquare') //companion div
+				.addService(googletag.companionAds())
+				.addService(googletag.pubads());
+		googletag.companionAds().setRefreshUnfilledSlots(true);
+		googletag.pubads().enableVideoAds();
+		googletag.enableServices();
+	});
+</script>
+
+<script src="http://localhost/mwEmbed/mwEmbedLoader.php/p/1666321/uiconf_id/34356981"></script>
+	<div id="kaltura_player_1460032511" style="width: 640px; height: 400px; float: left;box-shadow: 1px 1px 7px grey;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+	<span itemprop="name" content="Bugatti Vision Gran Turismo: Unveiled"></span>
+	<span itemprop="description" content=""></span>
+	<span itemprop="duration" content="193"></span>
+	<span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1994891/sp/166632100/thumbnail/entry_id/1_ectaz4lo/version/100011/acv/141"></span>
+	<span itemprop="width" content="560"></span>
+	<span itemprop="height" content="395"></span>
+	</div>
+<div style="float:left;margin-left:0.5cm;">
+<h3 style="margin-top: 0;">The rectangle below receives the companion creative from the ad unit (300x250).</h3>
+<p>
+<div id="testCompanionSquare" style="width:300px;height:250px; background-color: gainsboro; border-style:dotted;border-width:1px; border-color: black; float: none;box-shadow: 1px 1px 7px;">
+	<!--<script type="text/javascript">-->
+		<!--// Using the command queue to enable asynchronous loading.-->
+		<!--// The unit will not actually display now - it will display when-->
+		<!--// the video player is displaying the ads.-->
+	<!--googletag.cmd.push(function() { googletag.display('companionDiv'); });-->
+	<!--</script>-->
+</div>
+
+</p>
+</div>
+
+<script>
+mw.setConfig( 'debug' , true ); //Should enable setConfig debug or 'debugKalturaPlayer' in the browser directly.
+kWidget.embed({
+	"targetId": "kaltura_player_1460032511",
+	"wid": "_1666321",
+	"uiconf_id": 34356981,
+	"flashvars": {
+	"streamerType": "auto",
+		"bumper.plugin": false,
+	"doubleClick": {
+		"adsManagerLoadedTimeout": 15000,
+		"plugin": true,
+//		"adTagUrl": "http://localhost/tests/Lakana/ad.xml",
+		"adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/3468/lakana_amino/weather&cust_params=coid%3D244819117%26vidcat%3Dweather&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&vid=generic_video_137954&cmsid=123456&url=[referrer_url]&description_url=&ciu_szs=728x90,300x250&ad_rule=0&coid=244819117&correlator=[timestamp",
+		"leadWithFlash": false,
+		"trackCuePoints": false,
+		"htmlCompanions": "testCompanionSquare:300:250;testCompanionLong:726:88",
+		"debugMode": true
+},
+/*
+	"skipBtn": {
+		"label": "Skip Ad",
+		"skipOffset": 5, //Determines the offset before the skip button appears.
+		"plugin": true
+	},
+	 "skipNotice": { //The message that will appear before the skip button is available.
+             "text": "You can skip this ad in {sequenceProxy.skipOffsetRemaining} seconds"
+     },
+	"noticeMessage": { //The message that will appear during the ad sequence.
+             "text": "Advertisement: Video will resume in {sequenceProxy.timeRemaining} seconds"
+     },  */
+	"inlineScript": true
+/*	"ADZONE": '/4160/mv.inctest',
+	"TAGS": 'dfp_video_test',*/
+},
+	"cache_st": 1460032511,
+	"entry_id": "1_bzfy0msc"
+});
+</script>
+
+<div style="clear:left;margin-left:2cm;"></div>
+<p>
+<h3>The area below receives the companion creative from the ad unit (728x90).</h3>
+<!--Long banner companion used for testing-->
+<div id="testCompanionLong" style="width:726px;height:88px; background-color: gainsboro; border-style:dotted;border-width:1px; border-color: black; float: none;box-shadow: 1px 1px 7px;"></div>
+</p>
+
+	</body>
+	</html>

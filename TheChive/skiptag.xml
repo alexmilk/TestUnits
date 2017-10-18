@@ -1,0 +1,101 @@
+<VAST xmlns:MM="http://api.mediamind.com/V1/DataContracts" version="2.0">
+    <Ad id="14602547">
+        <InLine>
+            <AdSystem>
+                <![CDATA[ MediaMind ]]>
+            </AdSystem>
+            <AdTitle>
+                <![CDATA[ Splash Veggies_7_X_Swanson_X ]]>
+            </AdTitle>
+            <Description>
+                <![CDATA[ Splash Veggies_7_X_Swanson_X ]]>
+            </Description>
+            <Impression id="Impression">
+                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=riis&pl=VAST&optOut=0&pos=4883&c=24&ai=33201252&pluid=0&ord=278312852&dg=4270135&sdg=7701482&ta=-1&sessionid=4648759304440841903&pcp=&vurl=
+]]>
+            </Impression>
+            <Creatives>
+                <Creative id="33201252" AdID="33201252" sequence="1">
+                    <Linear skipoffset="00:00:04">
+                        <Duration>00:00:07</Duration>
+                        <TrackingEvents>
+                            <Tracking event="creativeView">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5ECreativeView.Linear.132511647%7E0%7E0%7E1%7E0%7E0%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="creativeView">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5Eadstart%7E0%7E0%7E1%7E0%7E2%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="start">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebVideoStarted%7E0%7E0%7E1%7E0%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="firstQuartile">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5Eeb25Per_Played%7E0%7E0%7E1%7E0%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="midpoint">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5Eeb50Per_Played%7E0%7E0%7E1%7E0%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="thirdQuartile">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5Eeb75Per_Played%7E0%7E0%7E1%7E0%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="complete">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebVideoFullPlay%7E0%7E0%7E1%7E0%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="mute">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebVideoMute%7E0%7E0%7E1%7E1%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="unmute">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebVideoUnmute%7E0%7E0%7E1%7E1%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="pause">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebVideoPause%7E0%7E0%7E1%7E1%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                            <Tracking event="fullscreen">
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EebFSStart%7E0%7E0%7E1%7E1%7E1%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903
+]]>
+                            </Tracking>
+                        </TrackingEvents>
+                        <VideoClicks>
+                            <ClickThrough>
+                                <![CDATA[
+https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=isi&pl=VAST&optOut=0&interactionsStr=33201252%7E%7E0%5EClick.Linear.132511647%7E0%7E1%7E1%7E0%7E0%7E132511647%7E0&pos=4883&ebRandom=278312852&dg=4270135&ta=-1&sessionid=4648759304440841903&rtu=$$http://swanson.campbellskitchen.com/recipe/glazed-carrots/$$
+]]>
+                            </ClickThrough>
+                        </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile id="132511647" height="1080" width="1920" bitrate="3417" type="video/mp4" delivery="progressive" maintainAspectRatio="true" scalable="true">
+                                <![CDATA[
+https://secure-ds.serving-sys.com/BurstingRes/Site-48144/Type-16/59c0e579-3f56-4ddf-bcb6-c8e8a82607c0.mp4
+]]>
+                            </MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+                <Creative id="33201252" AdID="33201252" sequence="1">
+                    <CompanionAds/>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>

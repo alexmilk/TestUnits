@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Letterboxing issue</title>
+    <style>
+        .greenText {
+            color: lawngreen;
+        }
+
+        #redText {
+            color: red;
+        }
+
+        .texts {
+            font-family: Verdana;
+        }
+
+        #analyticsLog {
+            width: 555px;
+            height: 320px;
+            margin-left: 10px;
+            background-color: black;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border: 1px solid black;
+            font-family: Arial;
+            padding: 5px;
+            font-size: 11px;
+            word-wrap: break-word;
+
+        }
+
+    </style>
+    <script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+<script>
+    function bodyStyle(){
+        document.getElementById("mainBody").style.backgroundColor = "#838683";
+        document.getElementById("mainBody").style.color = "white";
+        document.getElementById("analyticslog").style.backgroundColor = "grey";
+    }
+    $(document).ready(function(){
+        $('kaltura_player_1466954509').css("margin", "auto");
+    })
+</script>
+
+<!--Player main div-->
+
+<script src="/mwEmbed/mwEmbedLoader.php/p/1068292/sp/106829200/embedIframeJs/uiconf_id/39410381/partner_id/1068292" crossorigin="anonymous"></script>
+<div id="details"
+     style="width: 1125px; height: auto; margin: auto; text-align: left; border-width: 1px; border-style: solid; border-color: black; padding-bottom: 10px; padding-left: 10px; box-sizing: border-box;">
+    <h2 class="texts">Disney Letterboxing tester</h2>
+    <h4 id="uiconf"></h4>
+    <br>
+    <h4 id="entrydit"></h4>
+</div>
+<br>
+
+<div style="width:1125px; height: 500px; margin: auto;">
+    <div id="kaltura_player_1466954509"
+         style="width: 806px !important; height: 454px !important; border-width: 0px; border-style: solid; border-color: black; box-sizing: border-box; display: block; margin: auto !important;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+        <span itemprop="name" content="Mad Max - Fury Road"></span>
+        <span itemprop="description" content=""></span>
+        <span itemprop="duration" content="153"></span>
+        <span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1068292/sp/106829200/thumbnail/entry_id/1_dj4dgj11/version/100032/acv/531"></span>
+        <span itemprop="width" content="806"></span>
+        <span itemprop="height" content="454"></span>
+    </div>
+    <!--<div id="analyticsLog" style="float: left; box-sizing: border-box;">-->
+        <!--<script>-->
+            <!--$("#analyticsLog:contains('onAdsManagerLoaded')").css("color", "lawngreen");-->
+        <!--</script>-->
+    </div>
+
+    <br>
+    <div style="clear: both; margin-bottom: 10px;"></div>
+    <div id="new"
+         style="width: 1125px; height: auto; margin: auto; text-align: left; border-width: 1px; border-style: solid; border-color: black; padding-top: 5px; padding-left: 5px; padding-bottom: 5px; box-sizing: border-box;">
+        <button type="button" onclick="location.reload();" style="margin-right: 10px; float: left;">Reload page</button>
+        <button type="button" style="clear: none; margin-right: 10px; margin-bottom: 10px;"
+                onclick=$("#analyticsLog").empty();>Clear log
+        </button>
+        <button type="button" style="clear: none; margin-right: 10px; margin-bottom: 10px;"
+                onclick=doPlay()>Force Play
+        </button>
+        <br>
+        Entry ID changer:
+        <form style="margin-top: 5px" id="formEntry" onsubmit="return false;">
+            <input style="width: 150px;" type="text" id="adInput" placeholder="Input entry id"/>
+            <input style="width: 60px; height: 20px;" type="submit" onclick="setEntry();"/>
+        </form>
+        <br>
+        KS Changer:
+        <form style="margin-top: 5px" id="formKs" onsubmit="return false;">
+            <input style="width: 380px;" type="text" id="ksInput" placeholder="Input valid KS"/>
+            <input style="width: 60px; height: 20px;" type="submit" onclick="setKS();"/>
+        </form>
+
+
+    </div>
+
+    <script>
+        //kBinds and other functions
+        kWidget.addReadyCallback(function (playerId) {
+            var kdp = document.getElementById(playerId);
+            kdp.kBind('playerReady', function () {
+                $("#analyticsLog").append(kdp.evaluate("Player Version: " + "{playerVersion}<br>\n")).addClass("greenText");
+                $("#analyticsLog").append(kdp.evaluate("Entry Id: " + "{mediaProxy.entry.id}\n<br>")).addClass("greenText");
+                kdp.kBind('playerReady', function () {
+                    $("#analyticsLog").append("Ready to play.<br>").addClass("greenText")
+                });
+                $("#entrydit").replaceWith(kdp.evaluate("<b>Entry Id: </b>" + "<b>{mediaProxy.entry.id}\n</b>"));
+                $("#uiconf").replaceWith(kdp.evaluate("<b>Uiconf id: </b>" + "<b>{configProxy.kw.uiConfId}\n</b>"));
+
+            })
+
+            kdp.kBind('mediaReady', function () {
+                $("#analyticsLog").append("Media Ready\n<br>").addClass('greenText');
+            })
+            kdp.kBind('adEnd', function () {
+                $("#analyticsLog").append("Ad Ended\n<br>").addClass('greenText');
+            })
+            kdp.kBind('postSequenceStart', function () {
+                $("#analyticsLog").append("Post Sequence Started\n<br>").addClass('greenText');
+            })
+            kdp.kBind('firstPlay', function () {
+                $("#analyticsLog").append("First Play\n<br>").addClass('greenText');
+            })
+            kdp.kBind('doPause', function () {
+                $("#analyticsLog").append("Player Paused\n<br>").addClass("greenText");
+            })
+            kdp.kBind('doPlay', function () {
+                $("#analyticsLog").append("Player Playing\n<br>").addClass("greenText");
+            })
+            kdp.kBind('mediaError', function () {
+                $("#analyticsLog").append("Media Error\n<br>").addClass("greenText");
+            })
+            kdp.kBind('bumperStarted', function () {
+                $("#analyticsLog").append("Bumper Started\n<br>").addClass("greenText");
+            })
+            kdp.kBind('postSequenceStart', function () {
+                $("#analyticsLog").append("Playing Post Sequence.\n<br>").addClass("greenText");
+            })
+        });
+
+
+        function setEntry() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                var input = document.getElementById("adInput").value;
+                kdp.sendNotification("changeMedia", {"entryId": input});
+            })
+        }
+        function setKS() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                var input = document.getElementById("ksInput").value;
+                kdp.setKDPAttribute('servicesProxy.kalturaClient', 'ks', input);
+            })
+        }
+        function doPlay() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                kdp.sendNotification("doPlay");
+            })
+        }
+    </script>
+    <script>
+        var preroll = "https://ads.e-planning.net/eb/4/175df/player/preroll?ct=1&o=v&ma=1&vv=3";
+        mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+        mw.setConfig('debug', true);
+        mw.setConfig("debugTarget", "analyticsLog");
+        mw.setConfig("autoScrollDebugTarget", true);
+        kWidget.embed({
+            "targetId": "kaltura_player_1466954509",
+            "wid": "_1068292",
+            "uiconf_id": 39410381,
+            "flashvars": {
+                "streamerType": "auto",
+                "Kaltura.forceHighResFlavors": true,
+                "EmbedPlayer.WebKitPlaysInline": false,
+                "externalInterfaceDisabled": false,
+                "sourceSelector.plugin": true,
+                "IframeCustomPluginCss1": "https://static-mh.content.disney.io/starwars/assets/video/videoplayer_skin-f8661accc74b.css",
+                "thumbnailUrl": "https://lumiere-a.akamaihd.net/v1/images/tlj-trailer-thumb-swcom_dca48701.jpeg?region=0%2C0%2C1920%2C1080",
+                "autoPlay": false,
+                "videoplayer-skin-spinner-plugin": {
+                    "plugin": true,
+                    "iframeHTML5Js": "//static-mh.content.disney.io/starwars/assets/videoplayer_skin_spinner_plugin-6844a1f8702a.js",
+                    "iframeHTML5Css": "https://static-mh.content.disney.io/starwars/assets/video/videoplayer_skin_spinner_plugin-8c9ecd6d3aa5.css",
+                    "visible": true,
+                    "disableable": true,
+                    "showTooltip": false,
+                    "accessibilityLabels": true,
+                    "hideWhenEmpty": false,
+                    "parent": "videoHolder"
+                },
+                "accessibility-plugin": {
+                    "plugin": true,
+                    "iframeHTML5Js": "//static-mh.content.disney.io/starwars/assets/plugins/accessibility-plugin-154647bebd33.js",
+                    "visible": true,
+                    "disableable": true,
+                    "showTooltip": false,
+                    "accessibilityLabels": true,
+                    "hideWhenEmpty": false,
+                    "parent": "videoHolder"
+                },
+                "hlsjs": {
+                    "plugin": true,
+                    "withCredentials": false,
+                    "options": {},
+                    "maxErrorRetryCount": 2,
+                    "hlsLogs": false
+                },
+                "doubleClick": {
+                    "plugin": false
+                }
+            },
+            "cache_st": 1466954509,
+            "entry_id": "0_eeba24mb"
+        });
+    </script>
+</div>
+</body>
+
+</html>

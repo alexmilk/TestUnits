@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script src="/mwEmbed/mwEmbedLoader.php/p/2158501/sp/215850100/embedIframeJs/uiconf_id/35735941/partner_id/2158501"></script>
+<div id="kaltura_player" style="width: 800px; height: 620px;"></div>
+<script>
+    var menuOpen = false;
+    function openSlidesMenu() {
+        var $iframe = $("#kaltura_player_ifp").contents();
+        var sbc = $iframe.find('.sideBarContainer');
+        sbc.addClass("pinned")
+    }
+    function closeSlidesMenu() {
+        var $iframe = $("#kaltura_player_ifp").contents();
+        var sbc = $iframe.find('.sideBarContainer');
+        sbc.removeClass("pinned");
+    }
+
+    var toggleMenu = function() {
+        if(menuOpen){
+            this.closeSlidesMenu();
+        }else{
+            this.openSlidesMenu();
+        }
+    }
+    kWidget.addReadyCallback(function (playerId) {
+        kdp = document.getElementById(playerId);
+        setTimeout(function () {
+            this.toggleMenu();
+        }, 2000);
+
+    });
+    kWidget.embed({
+        "targetId": "kaltura_player",
+        "wid": "_2158501",
+        "uiconf_id": 35735941,
+        "flashvars": {
+            "ks": "OTFhZGU2OWUzM2E0NGMwZGYyM2QwYTZjN2JmMDg3ODcwYjA4MDg3NXwyMTU4NTAxOzIxNTg1MDE7MTQ5OTkzNTY0NjsyOzE0OTk4NDkyNDYuNDc0O2FkbWluO2Rpc2FibGVlbnRpdGxlbWVudDs7",
+            "chapters": {
+                'plugin': true
+            },
+            "IframeCustomPluginCss1": "pin-chapters.css",
+            "autoPlay": false
+        },
+        "entry_id": "1_7gvbtp21"
+    });
+</script>
+</body>
+</html>

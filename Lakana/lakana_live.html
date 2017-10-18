@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lakana Tester</title>
+</head>
+<body>
+<h2>Lakana live tester</h2>
+<script src="/mwEmbed/mwEmbedLoader.php/p/2109901/sp/210990100/embedIframeJs/uiconf_id/35096782/partner_id/2109901"></script>
+<div id="kaltura_player_1466954509" style="width: 560px; height: 395px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+	<span itemprop="name" content="Bugatti Vision Gran Turismo: Unveiled"></span>
+	<span itemprop="description" content=""></span>
+	<span itemprop="duration" content="193"></span>
+	<span itemprop="width" content="560"></span>
+	<span itemprop="height" content="395"></span>
+</div>
+<script>
+    var mediaProxyEntry = {
+        "entry": {
+            "id": "sample",
+            "thumbnailUrl": null
+        },
+        "meta": {
+            "type": 7,
+            "hlsStreamUrl": "https://ibnclive-lh.akamaihd.net/i/bmg/ibnccnnhd1_1@361011/master.m3u8"
+        },
+        "sources":[
+            {
+                "src":"http://ibnclive-lh.akamaihd.net/i/bmg/ibnccnnhd1_1@361011/master.m3u8",
+                "type":"application/vnd.apple.mpegurl"
+            }
+        ]
+    };
+    mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+    mw.setConfig('debug', true);
+    mw.setConfig("debugTarget", "analyticsLog");
+    mw.setConfig("autoScrollDebugTarget", true);
+    kWidget.embed({
+        "targetId": "kaltura_player_1466954509",
+        "wid": "_2109901",
+        "uiconf_id": 35096782,
+        "flashvars": {
+            "mediaProxy": mediaProxyEntry,
+//            "LeadWithHLSOnJs": true,
+            "liveCore.disableLiveCheck": true,
+            "streamerType": "auto",
+            "skipBtn": {
+                "plugin": false
+
+            },
+            "EmbedPlayer.WebKitPlaysInline": false,
+            "autoPlay": false,
+            "doubleClick": {
+                "plugin": false,
+                "adTagUrl": "http://ads.e-planning.net/eb/4/15848/home/PreRoll?o=v&ma=1&vv=2",
+                "prerollUrl": null, //VAST trafficking
+                "postrollUrl": null,
+                "debugMode": true
+            },
+        },
+        "cache_st": 1466954509,
+
+    });
+</script>
+
+</body>
+</html>

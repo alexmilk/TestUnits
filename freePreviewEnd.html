@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <title>Access Control Preview, Custom Purchase</title>
+
+    <script src="
+http://cdnapi.kaltura.com/p/459791/sp/45979100/embedIframeJs/uiconf_id/24377482/partner_id/459791
+"></script>
+
+</head>
+<body>
+
+<div id="playerTarget" style="width:400px;height:330px;"></div>
+<br>
+
+<script>
+window['doPurchaseDialog'] = function(){
+console.log('doPurchase');
+var pos = $('#playerTarget').position();
+$('#playerTarget').after(
+$('<div />').append(
+$('<h2>Sample purchase flow:</h2>'),
+$('<br />'),
+$('<button />')
+.attr('type', 'button')
+.html('simulate purchase')
+.click( function(){
+
+// set to loading
+$('.myPurchaseDialog').html(
+'loading ...' );
+// Query the service for a ks:
+$.getJSON(
+'http://www.kaltura.com/api_v3/?service=session&action=start&secret=ee41022cbff7195cc9ea2f6a20fcf2bf&partnerId=459791&type=user&format=1',
+function( jqxhr ){
+
+console.log(jqxhr);
+myKdp.setKDPAttribute(
+'servicesProxy.kalturaClient', 'ks', jqxhr.ks );
+
+$('.myPurchaseDialog').remove();
+
+        })
+    })
+)
+.addClass('myPurchaseDialog')
+.css({
+'position':'absolute',
+'top': pos.top,
+'left': pos.left,
+'width' : "400px",
+'height' : "330px",
+'opacity': .8,
+'background-color': 'black',
+'color': 'white'
+})
+)
+}
+
+kWidget.embed( 'playerTarget', {
+"targetId": "kaltura_player_1409274016",
+"wid": "_459791",
+"uiconf_id": 24377482,
+"cache_st": 1409274016,
+"entry_id": "0_jm7k9vll",
+'flashvars':{
+'disableAlerts': true
+},
+'readyCallback': function( playerId ){
+console.log('CallBack');
+myKdp = $('#' + playerId)[0];
+
+myKdp.addJsListener( 'freePreviewEnd',
+'doPurchaseDialog' );
+
+function(remove){
+    if
+}
+
+
+
+}
+
+});
+</script>
+</body>
+</html>

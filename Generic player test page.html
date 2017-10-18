@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Generic player test page</title>
+
+
+<script type="text/javascript" src="//s0.2mdn.net/instream/html5/gpt_proxy.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!--<script>-->
+<!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+<!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+<!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+<!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+
+<!--ga('create', 'UA-56422560-1', 'auto');-->
+<!--ga('send', 'pageview');-->
+
+<!--</script>-->
+
+
+<script type='text/javascript'>
+
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        gads.src = '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+
+    googletag.cmd.push(function() {
+        // Supply YOUR_NETWORK and YOUR_UNIT_PATH.
+        googletag.defineSlot('/YOUR_NETWORK/YOUR_UNIT_PATH', [728, 90], 'testCompanionLong')
+                .addService(googletag.companionAds())
+                .addService(googletag.pubads());
+        googletag.defineSlot('/YOUR_NETWORK/YOUR_UNIT_PATH', [300, 250], 'testCompanionSquare')
+                .addService(googletag.companionAds())
+                .addService(googletag.pubads());
+        googletag.companionAds().setRefreshUnfilledSlots(true);
+        googletag.pubads().enableVideoAds();
+        googletag.enableServices();
+    });
+</script>
+
+<script>
+
+var Base64 = {
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    encode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = Base64._utf8_encode(input);
+
+        while (i < input.length) {
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+            output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+        }
+        return output;
+    },
+
+    decode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+        while (i < input.length) {
+            enc1 = this._keyStr.indexOf(input.charAt(i++));
+            enc2 = this._keyStr.indexOf(input.charAt(i++));
+            enc3 = this._keyStr.indexOf(input.charAt(i++));
+            enc4 = this._keyStr.indexOf(input.charAt(i++));
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+            output = output + String.fromCharCode(chr1);
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2);
+            }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3);
+            }
+        }
+        output = Base64._utf8_decode(output);
+        return output;
+    },
+
+    _utf8_encode: function(string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+        for (var n = 0; n < string.length; n++) {
+            var c = string.charCodeAt(n);
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+        }
+        return utftext;
+    },
+
+    _utf8_decode: function(utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+        while (i < utftext.length) {
+            c = utftext.charCodeAt(i);
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if ((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i + 1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i + 1);
+                c3 = utftext.charCodeAt(i + 2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+        }
+        return string;
+    }
+}
+
+function addToParameters(key,value) {
+    parameters+="&"+key+"="+value;
+}
+
+function getQueryParams() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            function(m,key,value) {
+                vars[key] = value;
+            });
+    return vars;
+}
+
+var parameters = "";
+
+
+var render = function (){
+    setTimeout( function (){
+        kWidget.destroy('myVideoTarget');
+        if($('#forceHTML5').prop('checked') == true){
+            mw.setConfig('Kaltura.LeadWithHTML5', true);
+        }
+        var str = $('#jsonTextArea').val();
+        str = str.split("\n").join('');
+        var myJson;
+        try{
+            if(str){
+                myJson = $.parseJSON(str);
+            }
+        } catch(error){
+            alert('Please validate your JSON');
+            return;
+        }
+
+        if($('#playlistId').val()){
+            //check for existing JSON
+            if(myJson){
+                //"playlistAPI.kpl0Id": "1_ft5fcih2"
+                if($("#jsonTextArea").val().indexOf("{") == 0){
+
+                }
+            }else{
+                //else create an empty one
+                $("#jsonTextArea").val('{\n'+'"playlistAPI.kpl0Id":"'+ $('#playlistId').val()+'"'+'\n}');
+            }
+            $('#useJson').prop('checked',true);
+            onJsonCheck();
+
+        }
+
+
+        mw.setConfig('Kaltura.EnableEmbedUiConfJs', true);
+
+
+        kWidget.embed({
+            'targetId': 'myVideoTarget',
+            'wid': '_'+$('#partnerId').val(),
+            'uiconf_id' : $('#uiconf').val(),
+            'flashvars': myJson ,
+            "entry_id": $('#entryId').val()
+        });
+        if(mw.getConfig('version')){
+            $("#verText").text( mw.getConfig('version') );
+            $("#header").show();
+            $("#loadingText").show();
+        }
+        //debugger;
+    } , 1000 );
+}
+
+var onUseUiconfCheck = function (){
+    if($('#useUiconfVersion').prop('checked') == true){
+        $('#specificVersions').hide();
+    } else {
+        $('#specificVersions').show();
+    }
+
+};
+
+var editMode = function (){
+    $("#overrides").show();
+    $("#versions").show();
+    $("#dimensions").show();
+}
+var onJsonCheck = function (){
+    if($('#useJson').prop('checked') == false){
+        $('#jsonFile').hide();
+    } else {
+        $('#jsonFile').show();
+    }
+}
+
+var playerObj;
+
+function jsCallbackReady(objectId) {
+    playerObj = document.getElementById(objectId);
+}
+
+
+
+
+
+
+$( document ).ready(function() {
+
+    function getChar(event) {
+        return String.fromCharCode(event.keyCode || event.charCode)
+    }
+    $("#showQR").prop('checked' , false);
+    callQR();
+    function callQR(){
+        //debugger;
+        var url= location.href ;
+         //protocol + '//' + location.host + location.pathname + document.location.search;
+        url=encodeURIComponent(url);
+        var fullUrl="https://chart.googleapis.com/chart?chld=H&chs=354x354&cht=qr&chl="+url;
+        $("#QR").attr("src",fullUrl);
+    }
+
+    document.charcount = 0;
+    var _this = this;
+    $(window).bind('keypress', function(e){
+        switch (e.target.tagName) {
+            case "INPUT": case "SELECT": case "TEXTAREA": return;
+        }
+        var char = (e.keyCode ? e.keyCode : e.which);
+        if (!char) return // special key
+        if (	(document.charcount == 0 && char==101)
+                || 	(document.charcount == 1 && char==105)
+                || 	(document.charcount == 2 && char==116)
+                || 	(document.charcount == 3 && char==97)
+                || 	(document.charcount == 4 && char==110)
+                || 	(document.charcount == 5 && char==97)
+                || 	(document.charcount == 6 && char==118)
+                || 	(document.charcount == 7 && char==103)
+                || 	(document.charcount == 8 && char==105)
+                || 	(document.charcount == 9 && char==108)
+                ){
+            document.charcount++;
+        }else{
+            document.charcount = 0;
+        }
+        if(document.charcount == 5){
+            editMode();
+        }
+        if(document.charcount == 10){
+            document.generateEditUrl = true;
+        }
+
+
+    });
+
+
+    $('#customPS').hide();
+
+    var vars = getQueryParams(document.location.search);
+
+    var loadPlayer = false;
+    if(vars.entryId){
+        $('#entryId').val(vars.entryId);
+        var loadPlayer = true;
+    }else{
+        $('#entryId').val("");
+    }
+    if(vars.playlistId){
+        $('#playlistId').val(vars.playlistId);
+        var loadPlayer = true;
+    }else{
+        $('#playlistId').val("");
+    }
+    if(vars.partnerId){
+        var loadPlayer = true;
+        $('#partnerId').val(vars.partnerId);
+    }
+    if(vars.cachebreaker){
+        if(vars.cachebreaker%10!=0){
+            $('#myForm').hide();
+            $('#header').hide();
+            $('#warning').hide();
+        }
+    }
+    if(vars.uiconf){
+        var loadPlayer = true;
+        $('#uiconf').val(vars.uiconf);
+
+    }
+    if(vars.uiconfHeight){
+        var loadPlayer = true;
+        $('#uiconfHeight').val(vars.uiconfHeight);
+
+    }
+    if(vars.uiconfWidth){
+        var loadPlayer = true;
+        $('#uiconfWidth').val(vars.uiconfWidth);
+
+    }
+    if(vars.coreTag){
+        var loadPlayer = true;
+        $('#coreNum').val(vars.coreTag);
+        $('#useUiconfVersion').prop('checked' , false);
+        $('#coreTag').prop('checked' , true);
+
+    }
+    if(vars.json){
+        var loadPlayer = true;
+        $('#jsonTextArea').val( Base64.decode(vars.json) );
+        $('#useJson').prop('checked' , true);
+    } else {
+        $('#useJson').prop('checked' , false);
+    }
+    if(vars.corePullRequest){
+        var loadPlayer = true;
+        $('#coreNum').val(vars.corePullRequest);
+        $('#useUiconfVersion').prop('checked' , false);
+        $('#corePullRequest').prop('checked' , true);
+    }
+
+    if(vars.psPullRequestNum){
+        var loadPlayer = true;
+        $('#psPullRequestNum').val(vars.psPullRequestNum);
+        $('#psPullRequest').prop('checked' , false);
+        $('#psPullRequest').prop('checked' , true);
+        $('#customPS').show();
+    }
+    if(vars.forceHTML5 == 'true'){
+        $('#forceHTML5').prop("checked" , true);
+    } else {
+        $('#forceHTML5').prop("checked" , false);
+    }
+
+
+    if(vars.editMode == 'true'){
+        document.generateEditUrl = true;
+        editMode();
+    }
+    onUseUiconfCheck();
+    onJsonCheck();
+    if(loadPlayer){
+        buildPath(false);
+    }
+
+
+
+
+    $.getScript( 'plugins.js' , function( data, textStatus, jqxhr ) {
+        if ( jqxhr.status == 200){
+
+        }else{
+            alert("Failed to load plugins.js");
+        }
+    });
+
+});
+
+
+var hideMe = function(){
+
+    if($('#hideMe').prop('checked') == true){
+        $('#formHolder').show();
+        $('#spacer1').show();
+        $('#spacer2').show();
+    } else {
+        $('#formHolder').hide();
+        $('#spacer1').hide();
+        $('#spacer2').hide();
+    }
+}
+
+var entryChanged = function(){
+    $('#playlistId').val("");
+}
+var playlistChanged = function(){
+    $('#entryId').val("");
+}
+var hideUI = function(){
+        this.cachebreaker = Math.floor(Math.random()*10000)*10+1;
+        $('#myForm').hide();
+        buildPath(true);
+}
+var psPrClicked = function(){
+    $('#customPS').show();
+}
+var psMasterClicked = function(){
+    $('#customPS').hide();
+}
+var corePrClicked = function(){
+    $("#coreLabel").text("E.G. 102");
+}
+var coreTagClicked = function(){
+    $("#coreLabel").text("E.G. v2.8.9");
+}
+
+var testVideo = function(){
+    $("#simpleVideoContainer").append("<video id='simpleVideo' style='width: 500px;height: 300px' controls></video>")
+    $('#simpleVideo').attr('src',$(playerObj).find("#myVideoTarget_ifp").contents().find("video").attr("src"));
+}
+
+var showSample = function(){
+   $('#myModal').modal({show:true})
+}
+var editJson = function(){
+    var height = window.innerHeight ||
+            html.clientHeight  ||
+            body.clientHeight  ||
+            screen.availHeight;
+
+    $('#jsonTextAreaEditor').height ( height * 0.6 );
+    $('#jsonTextAreaEditor').val($('#jsonTextArea').val()) ;
+   $('#myModalEditor').modal({show:true})
+}
+var tiny = function(){
+    window.open("http://tinyurl.com/api-create.php?url="+$(location).attr('href')+$(location).attr('search'), '_blank');
+}
+var closeEditJson = function(){
+    $('#jsonTextArea').val($('#jsonTextAreaEditor').val()) ;
+}
+
+    var onShowQR = function(){
+    if($("#showQR").prop('checked') == true ){
+        $('#QR').show();
+    } else {
+        $('#QR').hide();
+
+    }
+}
+
+
+var buildPath = function(shouldRedirect){
+    var path;
+    if($('#useUiconfVersion').prop('checked') == false){
+        var coreVer = '';
+        if($('#coreTag').prop('checked') == true){
+            //use a tag
+            coreVer="tags/"+$('#coreNum').val();
+        }else{
+            coreVer="pulls/"+$('#coreNum').val();
+        }
+        var psVer = ''
+        if($('#psPullRequest').prop('checked')){
+            psVer = '?pskwidgetpath=../../ps/pulls/'+ $('#psPullRequestNum').val();
+        }
+        path = 'http://kgit.html5video.org/'+coreVer+'/mwEmbedLoader.php'+"/uiconf_id/"+$('#uiconf').val()+"/partner_id/"+$('#partnerId').val()+"/"+psVer
+
+    } else {
+        path = 'http://cdnapi.kaltura.com/p/'+$('#partnerId').val()+'/sp/'+$('#partnerId').val()+
+                '00/embedIframeJs/uiconf_id/'+$('#uiconf').val()+'/partner_id/'+$('#partnerId').val() + "?&debug=true" ;
+    }
+    $("#header").text(path);
+    $.getScript( path, function( data, textStatus, jqxhr ) {
+        if ( jqxhr.status == 200){
+            render();
+        }else{
+            alert("Script failed to load. Cannot render player :(");
+        }
+    });
+    $('#myVideoTarget').width ($('#uiconfWidth').val());
+    $('#myVideoTarget').height ($('#uiconfHeight').val());
+    parameters = "";
+    // POPULATE LINK
+    if($('#entryId').val()){
+        addToParameters("entryId",$('#entryId').val());
+    }
+
+    if($('#playlistId').val()){
+        addToParameters("playlistId",$('#playlistId').val());
+    }
+
+    addToParameters("partnerId",$('#partnerId').val());
+    addToParameters("uiconf",$('#uiconf').val());
+    addToParameters("forceHTML5",$('#forceHTML5').prop("checked"));
+    addToParameters("uiconfWidth",$('#uiconfWidth').val());
+    addToParameters("uiconfHeight",$('#uiconfHeight').val());
+    if(this.cachebreaker){
+        addToParameters("cachebreaker",this.cachebreaker);
+    }
+
+    if(document.generateEditUrl){
+        addToParameters("editMode",true);
+    }
+
+    var jsonTxt = $('#jsonTextArea').val();
+    if($('#useJson').prop("checked") && jsonTxt){
+        addToParameters("json",Base64.encode(jsonTxt));
+    }
+    if($('#useUiconfVersion').prop('checked') == false){
+        if($('#coreTag').prop('checked') == true){
+            addToParameters("coreTag",$('#coreNum').val());
+        }else{
+            addToParameters("corePullRequest",$('#coreNum').val());
+        }
+    }
+    if($('#psPullRequest').prop('checked') == true && $('#useUiconfVersion').prop('checked') == false){
+        addToParameters("psPullRequestNum",$('#psPullRequestNum').val());
+    }
+
+
+    var newUrl = location.protocol + '//' + location.host + location.pathname +"?"+ parameters ;
+    if(newUrl.length > 2047){
+        alert("Sorry. URL to long. Try to reduce the JSON configuration");
+        return;
+    }
+    if(shouldRedirect){
+        window.location.href = newUrl;
+    }
+}
+
+
+
+
+$(function () {
+    $("[data-toggle='tooltip']").tooltip();
+});
+$(function () {
+    $("[data-toggle='tooltip-tinyUrl']").tooltip();
+});
+
+</script>
+
+</head>
+<body>
+<div id="myForm" class="form" style="position: absolute; right: 20px ; width: 270px; top:0px" >
+    <div class="simpleFormItems well" >
+    <input id="hideMe" type="checkbox" checked="true" onclick="hideMe()"  >  Show
+
+
+    <button id="tinyURL" class="btn btn-info pull-right btn-xs" onclick="hideUI()"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title=""
+            data-original-title="Share this page and hide the UI">  <span class="glyphicon glyphicon glyphicon-share"></span></button>
+
+
+        <br id="spacer1"  />
+        <br id="spacer2" />
+    <div id="formHolder" >
+        <div class="form-inline">
+            <div class="input-group">
+                <div class="input-group-addon" style="width:120px">Partner id</div>
+                <input type="text" id="partnerId" class="form-control" placeholder="Partner id"
+                       style="width:120px"
+                   value="243342">
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon" style="width:120px">Uiconf id</div>
+                <input type="text" id="uiconf" class="form-control" style="width:120px" value="26426791" >
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon" style="width:120px">Entry id</div>
+            <input type="text" style="width:120px" id="entryId" class="form-control" placeholder="entry id" onchange="entryChanged()"
+                   value="">
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon" style="width:120px">Playlist id</div>
+            <input type="text" style="width:120px" id="playlistId" class="form-control" placeholder="playlist id"
+                   value="" onchange="playlistChanged()">
+        </div>
+        <div class="form-inline" id="dimensions" style="display:none">
+            <div class="form-group">
+                <label >Height</label>
+                <input type="text" id="uiconfHeight" class="form-control" placeholder="height" style="width:50px"
+                       value="330">
+            </div>
+            <label >Width</label>
+            <input type="text" id="uiconfWidth" class="form-control" placeholder="width" style="width:50px"
+                   value="400">
+        </div>
+
+
+
+        <!--          VERSIONS          -->
+
+        <div class="form-inline" id="versions" style="display:none">
+            <input id="useUiconfVersion" type="checkbox" checked="true" onclick="onUseUiconfCheck()" >
+            Take versions from uiconf
+        </div>
+
+        <div id="specificVersions" >
+            <div class="input-group">
+                <div class="input-group-addon">CORE</div>
+                    <div class="btn-group btn-group-sm" id="coreVersion">
+                    <label class="btn btn-primary btn-sm">
+                        <input type="radio" name="options1" id="coreTag" value="1" checked="true"
+                               onclick="coreTagClicked()" > Tag</label>
+                    <label class="btn btn-primary btn-LG">
+                        <input type="radio" name="options1" id="corePullRequest" value="2" onclick="corePrClicked()"
+                                > P. Request</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label id="coreLabel" >core pull request #</label>
+                <input type="text" id="coreNum" class="form-control" placeholder="E.G. 530" value="v2.10">
+            </div>
+
+            <div>
+                <div class="input-group">
+                <div class="input-group-addon">PS</div>
+                    <div class="btn-group btn-group-sm" id="psVersion">
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="psMaster" value="1" checked="true"
+                               onclick="psMasterClicked()"   > Master</label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="psPullRequest" value="2" onclick="psPrClicked()" >P.
+                        Request</label>
+                </div>
+                </div>
+                <div class="form-group" id="customPS">
+                    <label >ps pull request #</label>
+                    <input type="text" id="psPullRequestNum" class="form-control" placeholder="E.G. 33" value="33">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-inline">
+            <input id="forceHTML5" type="checkbox" checked="false" >  Force HTML5
+        </div>
+
+
+
+
+        <div class="form-group" id="overrides" style="display:none">
+            <div class="form-group">
+                <input id="useJson" type="checkbox" onclick="onJsonCheck()" checked="false" > Override/add config
+            </div>
+            <div id="jsonFile" class="form-group" >
+                <button class="btn btn-xs btn-default pull-left " onclick="showSample()"><span class="glyphicon glyphicon-question-sign"></span></button>
+                <button class="btn btn-xs btn-default pull-left " onclick="editJson()" style=" margin: 0 5px; "><span class="glyphicon glyphicon glyphicon-edit"></span> edit</button>
+
+            <div id="pluginsContainer" class="pull-right"></div>
+                <textarea rows="10"  id="jsonTextArea" placeholder="add valid JSON here:"
+                          style="font-size: 11px ;width: 100%;font-family: Menlo,Monaco,Consolas,Courier New,monospace;"></textarea>
+
+            </div>
+        </div>
+
+
+
+        <button class="btn btn-primary btn-sm" onclick="buildPath(true)"><i class="icon-white icon-thumbs-up"> </i>
+            <span class="glyphicon glyphicon-ok"></span> Load</button>
+        <div class="pull-right" style="padding-top: 8px" >
+            <input id="showQR" type="checkbox" onclick="onShowQR()"  > QR code
+            <button id="hideUI" class="btn btn-info pull-right btn-xs" onclick="tiny()"
+                    data-toggle="tooltip-tinyUrl"
+                    data-placement="bottom"
+                    title=""
+                    style=" margin: 0 0 0 5px; "
+                    data-original-title="Open this current page in TinyUrl (hit 'Load' first to renter">  <span class="glyphicon glyphicon glyphicon-link"></span></button>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<h3 id="warning" style="font-weight: normal">&nbsp;&nbsp;For Kaltura internal use only. Please <span style="color:red; font-weight: bold;">DO NOT</span> share this page URL</h3>
+<br/>
+<span id="loadingText" class="label label-default" style="margin-left: 10px ; display: none">Loading version</span>
+<span id="verText" class="label label-warning" ></span>
+<span id="header" style="padding: 10px;display: none"  ></span>
+<div style="padding:30px" >
+    <div id="myVideoTarget"   >
+
+    </div>
+    <div id="simpleVideoContainer"   >
+
+    </div>
+</div>
+
+        <img id="QR" src="#" style="display:none;position: absolute; top: 0px ; right: 295px"/>
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Adding / overriding configuration</h4>
+            </div>
+            <div class="modal-body">
+                <p>You will need to write the configuration as a JSON. This JSON is very strict and must be valid. You can write your own configuration or use a common snippet from the drop-down.</p>
+                <p></p>
+                <p>Here's how to add a simple flashvar:&nbsp;</p>
+                <pre>{<br>"autoPlay" : true<br>}</pre>
+                <p>Here's how to add a new plugin </p>
+                <pre>{<br>&nbsp; &nbsp;"myPlugin" : {<br>&nbsp; &nbsp;  "plugin" : true, <br>&nbsp; &nbsp;  "attribute1" : 12,<br>&nbsp; &nbsp;  "attribute2" : "some string"<br>&nbsp;  }<br>}</pre>
+                <p></p>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="myModalEditor">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit your JSON configuration</h4>
+            </div>
+            <div class="modal-body">
+                <textarea rows="10"  id="jsonTextAreaEditor" placeholder="add valid JSON here:"
+                          style="font-size: 11px ;width: 100%;height: 100%;font-family: Menlo,Monaco,Consolas,Courier New,monospace;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" onclick="closeEditJson()" class="btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="testCompanionLong" style="width: 728px; height:90px;">
+    <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('companionDiv'); });
+    </script>
+</div>
+
+
+
+<div id="testCompanionSquare" style="width: 300px; height: 250px ; ">
+    <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('testCompanionSquare'); });
+    </script>
+</div>
+
+
+</body>
+</html>

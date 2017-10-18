@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kaltura - DoubleClick Vast Trafficking and overlay cuepoints</title>
+	<script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+
+</head>
+
+<body>
+<script src="http://cdnapi.kaltura.com/html5/html5lib/v2.56/mwEmbedLoader.php/p/1666321/uiconf_id/34356981">
+
+
+</script>
+
+<div id="kaltura_player_1460986302384" style="width:900px;height:630px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject" >
+	<!-- Search engine metadata, based on schema.org/VideoObject -->
+	<span itemprop="description" content="A dated advertisment for Folgers Coffee"></span>
+	<span itemprop="name" content="Folgers Coffee"></span>
+	<span itemprop="duration" content="60"></span>
+	<span itemprop="thumbnailUrl" content="http://cfvod.kaltura.com/p/1666321/sp/166632100/thumbnail/entry_id/1_iei5gdm2/version/100007/acv/171"></span>
+	<span itemprop="width" content="600"></span>
+	<span itemprop="height" content="430"></span>
+</div>
+
+<script>
+	mw.setConfig( 'debug' , false );
+	kWidget.embed({
+		targetId: "kaltura_player_1460986302384",
+		wid: "_1666321",
+		cache_st: "1460986302384",
+		uiconf_id: "34356981",
+		entry_id: "1_iei5gdm2",
+		flashvars: {
+			"doubleClick": {
+				"plugin": true,
+				"adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=123",
+				"prerollUrl": null,
+				"leadWithFlash": false,
+				"disableCompanionAds": true,
+				"htmlCompanions": "testCompanionSquare:300:250;testCompanionLong:728:90",
+				"debugMode": true,
+				"trackCuePoints": true,
+				"enableCORS": true
+			},
+			"skipBtn":{
+				"plugin": true,
+				"skipOffset": 2
+			},
+			"adsOnReplay": true,
+			"debugMode": true,
+			"inlineScript": true
+		}
+	})
+</script>
+
+</body>
+</html>
