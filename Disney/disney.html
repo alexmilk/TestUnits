@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8" />
+    <title>Player</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <style>
+    .backStageContainer {
+        display:none;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    </style>
+    <script>
+        var uiConfid = 40058201;
+        var wid = getWid(uiConfid, '');
+        var url = "https://cdnapisec.kaltura.com/p/"+wid+"/sp/"+wid+"00/embedIframeJs/uiconf_id/"+uiConfid+"/partner_id/"+wid;
+        console.log('16:9');
+        ar = getAR('16:9');
+
+
+        function getWid(confid, wid) {
+            if (wid == "only replace if new player" || wid == '') {
+                switch(confid) {
+                    case 40058201:
+                    case 27176231:
+                    case 35976132:
+                    case 40436511:
+                    case 30285941:
+                    case 35883721:
+                    case 11673211:
+                        wid = 1068292;
+                        return wid;
+                    case 39857001:
+                    case 27077261:
+                    case 35673902:
+                    case 40436571:
+                        wid = 1082342;
+                        return wid;
+                    default:
+                        return null
+                }
+            }
+            else {
+                return wid;
+            }
+        }
+
+        function getAR(aspect) {
+            switch(aspect) {
+                case '16:9':
+                    ar = "width: 702px; height: 395px";
+                    break;
+                case '4:3':
+                    ar = "width: 600px; height: 450px";
+                    break;
+                case '2.66:1':
+                    ar = "width: 1053px; height: 395px";
+                    break;
+                case '2.40:1':
+                    ar = "width: 928px; height: 395px";
+                    break;
+                default:
+                    ar = "width: 702px; height: 395px";
+                    break;
+            }
+            return ar;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+
+</head>
+<body>
+    <script>
+        playerDiv = document.createElement('div');
+        playerDiv.id = "kaltura_player";
+        playerDiv.style = ar;
+        document.getElementsByTagName('body')[0].appendChild(playerDiv);
+
+        $.getScript( url, function( data, textStatus, jqxhr ) {
+            getPlayer();
+            getStatsDiv();
+        });
+
+        function getPlayer() {
+            mw.setConfig("debug", true);
+            kWidget.embed({
+              "targetId": "kaltura_player",
+              "wid": "_" + wid,
+              "uiconf_id": uiConfid,
+              "flashvars": {
+                "streamerType": "auto",
+                "audioSelector.defaultLang": "spa",
+                'closedCaptions.hideClosedCaptions': true,
+              },
+              "cache_st": Date.now(),
+              "entry_id": '1_wznh8pc9'
+            });
+        };
+
+        function getStatsDiv() {
+
+            kWidget.addReadyCallback(function(kaltura_player_ifp) {
+                var kdp = document.getElementById(kaltura_player_ifp);
+                additionalData(kaltura_player_ifp, kdp);
+            });
+
+            function additionalData(playerId, kdp) {
+                window.onload = function() {
+                    var entryMetadata = kdp.evaluate('{mediaProxy.entryMetadata}'),
+                    entry = kdp.evaluate('{mediaProxy.entry}');
+
+                    $('#entryName').text(entry['name'] + ' (' + entry['id'] + ')');
+                    flavorArray = kdp.evaluate('{mediaProxy.kalturaMediaFlavorArray}');
+                    flavorArrayString = '';
+                    $.each(flavorArray, function(key, value) {
+                        if (value['data-bandwidth'] != null && !value['data-tags'].includes('audio_only')) {
+                            flavorArrayString += (value['data-bandwidth'] / 1024).toFixed(0) + ", ";
+                        }
+                    });
+                    $('#availableBitrates').text(flavorArrayString);
+                    $('#partnerId').text(wid);
+                    $('#uiConfId').text(uiConfid);
+                }
+
+                kWidget.addReadyCallback(function( playerId ){
+                    kdp.kBind('bufferProgress', function(event){
+                        $('#bufferProgress').text(event.newTime + " sec");
+                        $('#buffered').text((kdp.evaluate("{video.buffer.percent}") * 100 ).toFixed(2));
+                    });
+
+                    kdp.kBind('playerStateChange', function(event) {
+                        $('#playerState').text(event);
+                    });
+
+                    kdp.kBind('playerPlayed', function() {
+
+                        $('#playerState').text('playing');
+                    });
+
+                    kdp.kBind("switchingChangeComplete", function(data){
+                        $('#currentBitrate').text(data);
+                    });
+
+                    kdp.kBind("preSeek", function( event ){
+                        var minutes = Math.floor(event/ 60);
+                        var seconds = Math.floor(event%60);
+                        $('#userSeeking').text(minutes.toString()+" minutes, "+seconds.toString()+" seconds");
+
+                    });
+
+                    kdp.kBind("closedCaptionsDisplayed", function( language ){
+                        console.log(language);
+                        $('#captions').text(language.language);
+                    });
+                });
+            };
+        };
+        function showDetails() {
+            $('.backStageContainer').show();
+            $('.infoButton').hide();
+        }
+    </script>
+    <div class='backStageContainer'>
+      <div class='backStageRow'>
+        <span class='backStageItem' id='entryName'></span>
+      </div>
+      <div class='backStageRow'>
+        Partner ID: <span class='backStageItem' id='partnerId'></span>
+      </div>
+      <div class='backStageRow'>
+        uiConfId: <span class='backStageItem' id='uiConfId'></span>
+      </div>
+      <div class='backStageRow'>
+        Player State: <span class='backStageItem' id='playerState'></span>
+      </div>
+      <div class='backStageRow'>
+        Buffer Progress: <span class='backStageItem' id='bufferProgress'></span>
+      </div>
+      <div class='backStageRow'>
+        Buffered %: <span class='backStageItem' id='buffered'></span>
+      </div>
+      <div class='backStageRow'>
+        Current Bitrate: <span class='backStageItem' id='currentBitrate'></span>
+      </div>
+      <div class='backStageRow'>
+        Available Bitrates: <span class='backStageItem' id='availableBitrates'></span>
+      </div>
+      <div class='backStageRow'>
+        User Seeking: <span class='backStageItem' id='userSeeking'></span>
+      </div>
+      <div class='backStageRow'>
+        Captions: <span class='backStageItem' id='captions'></span>
+      </div>
+    </div>
+
+
+<a href="/form" class="btn">Change settings</a>
+<a href="/switcher/40058201" class="btn" style="display: inline;">Switch Environment</a>
+<button onclick="showDetails()" class="infoButton">Show additional information</button><br />
+<span>Link to share: </span><a href="https://video-test.disn.io/player/1_wznh8pc9/40058201/16:9/">https://video-test.disn.io/player/1_wznh8pc9/40058201/16:9/</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kaltura Test</title>
+    </head>
+
+    <body>
+        <div class="video">
+            <div class="kaltura-video">
+                <div class="pusher"></div>
+                <div id="video-preview" class="video-embed-container">
+                </div>
+            </div>
+        </div>
+
+        <script src="//cdnapi.kaltura.com/p/1289861/sp/128986100/embedIframeJs/uiconf_id/23518022/partner_id/1289861"></script>
+        <script>
+
+            kWidget.embed({
+              targetId: "video-preview",
+              wid: "_1289861",
+              uiconf_id: 23518022,
+              flashvars: {
+                autoPlay: false,
+                autoMute: true,
+                loop: true,
+                "mediaProxy.preferedFlavorBR": 2500,
+                "controlBarContainer.plugin": false
+              },
+              cache_st: 1436296081,
+              entry_id: "0_1br7lwcc",
+            });
+        </script>
+    </body>
+</html>
