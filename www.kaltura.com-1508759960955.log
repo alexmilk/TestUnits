@@ -1,0 +1,124 @@
+Uncaught SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+kWidget: Kaltura HTML5 Version: 2.62
+getMarker> No <meta name="ResourceLoaderDynamicStyles"> found, inserting dynamically.
+Resource interpreted as Stylesheet but transferred with MIME type application/javascript: "http://cdnapi.kaltura.com/html5/html5lib/v2.62//resources/jquery.ui/jquery-ui.min.js".
+jQuery.fn.embedPlayer :: #kaltura_player
+processEmbedPlayers:: playerSelector: #kaltura_player
+EmbedPlayer:: addElement:: kaltura_player
+processEmbedPlayers::runPlayerSwap::kaltura_player
+EmbedPlayer::init:kaltura_player duration is: NaN, size: 560x315
+EmbedPlayer::mediaElement:init:kaltura_player
+processEmbedPlayers::swapEmbedPlayerElement: kaltura_player
+processEmbedPlayers::trigger:: EmbedPlayerNewPlayer kaltura_player
+kWidget: jsCallbackReady for kaltura_player
+EmbedPlayer::addPlayerElement :trigger startPlayerBuildOut:kaltura_player
+EmbedPlayer::checkPlayerSources: kaltura_player
+KWidgetSupport::loadAndUpdatePlayerData
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: video/mp4; codecs="avc1.42E01E, mp4a.40.2
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…-d87377b39c76&clientTag=html5:v2.62&preferredBitrate=600&uiConfId=37558961 type: application/vnd.apple.mpegurl
+KWidgetSupport:: addSource::kaltura_player : http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…165089-2773-7b92-0f96-d87377b39c76&clientTag=html5:v2.62&uiConfId=37558961 type: application/dash+xml
+KWidgetSupport:: trigger Kaltura_CheckConfig
+Warning: mediawiki.UtilitiesTime, trying to get npt time on NaN:NaN
+Warning: mediawiki.UtilitiesTime, trying to get npt time on NaN:NaN
+hlsjs::version: 0.7.11
+EmbedPlayer:updatePosterHTML:kaltura_player poster:http://cfvod.kaltura.com/p/1956791/sp/195679100/thumbnail/entry_id/1_n67ht25k/version/100042/width/560/height/315
+KAnalytics :: doSendAnalyticsEvent > MEDIA_LOADED
+KWidgetSupport:: trigger KalturaSupport_DoneWithUiConf
+EmbedPlayer::setupSourcePlayer: kaltura_player sources: 8
+EmbedPlayer::mediaElement::autoSelectSource
+EmbedTypes::detectPlayers running detect
+EmbedPlayer::trigger:EmbedPlayerUpdateMediaPlayers
+MediaElement::GetPlayableSources mimeFilter:undefined 7 sources playable out of 8
+MediaElement::GetPlayableSources mimeFilter:application/dash+xml 0 sources playable out of 7
+MediaElement::GetPlayableSources mimeFilter:video/playreadySmooth 0 sources playable out of 7
+MediaElement::GetPlayableSources mimeFilter:video/ism 0 sources playable out of 7
+MediaElement::GetPlayableSources mimeFilter:video/multicast 0 sources playable out of 7
+MediaElement::GetPlayableSources mimeFilter:video/wvm 0 sources playable out of 7
+MediaElement::GetPlayableSources mimeFilter:application/vnd.apple.mpegurl 1 sources playable out of 7
+MediaElement::autoSelectSource: Set via Adaptive HLS: source flavor id:iPadNew src: http://cdnapi.kaltura.com/p/1956791/sp/195679100/playManifest/entryId/1_n67…-d87377b39c76&clientTag=html5:v2.62&preferredBitrate=600&uiConfId=37558961
+EmbedPlayer:: selectPlayer hlsPlayer
+Error player interface must support actual disablePlayer
+EmbedPlayer::updatePlaybackInterface: duration is: 1695 playerId: kaltura_player
+EmbedPlayer::updatePlaybackInterface: loaded Native duration: 1695
+EmbedPlayer::updateLoadedPlayerInterface Native player loaded for: kaltura_player
+EmbedPlayerNative::MediaElementBindings
+EmbedPlayer::updateFeatureSupport trigger: updateFeatureSupportEvent
+EmbedPlayerNative::MediaElementBindings
+EmbedPlayer:: showPlayer: kaltura_player interace: w:560 h:315
+PlayerLayoutBuilder:: drawLayout Object {topBarContainer: Array[0], sideBarContainer: Array[0], videoHolder: Array[1], smartContainer: Array[0], controlBarContainer: Array[1]…}
+PlayerLayoutBuilder:: drawLayout:: container "smartContainer" not found in DOM
+EmbedPlayer: doUpdateLayout:: containerHeight: 315, components: 0, videoHolder old height: 315, new height: 315 hight delta: 0
+EmbedPlayer:updatePosterHTML:kaltura_player poster:http://cfvod.kaltura.com/p/1956791/sp/195679100/thumbnail/entry_id/1_n67ht25k/version/100042/width/560/height/315
+EmbedPlayer: updateLayout: trigger "updateLayout" 
+closedCaptions::set text size for: : 560 = 95%
+trigger::addControlBindingsEvent
+EmbedPlayer:updatePosterHTML:kaltura_player poster:http://cfvod.kaltura.com/p/1956791/sp/195679100/thumbnail/entry_id/1_n67ht25k/version/100042/width/560/height/315
+EmbedPlayer: doUpdateLayout:: containerHeight: 315, components: 0, videoHolder old height: 315, new height: 315 hight delta: 0
+EmbedPlayer:updatePosterHTML:kaltura_player poster:http://cfvod.kaltura.com/p/1956791/sp/195679100/thumbnail/entry_id/1_n67ht25k/version/100042/width/560/height/315
+EmbedPlayer: updateLayout: trigger "updateLayout" 
+closedCaptions::set text size for: : 560 = 95%
+EmbedPlayer:: Trigger: playerReady
+kAnalony::Trigger analyticsEvent type = 1
+LiveStream :: removeLiveStreamStatusMonitor
+EmbedPlayer: doUpdateLayout:: containerHeight: 315, components: 0, videoHolder old height: 315, new height: 315 hight delta: 0
+EmbedPlayer:updatePosterHTML:kaltura_player poster:http://cfvod.kaltura.com/p/1956791/sp/195679100/thumbnail/entry_id/1_n67ht25k/version/100042/width/560/height/315
+EmbedPlayer: updateLayout: trigger "updateLayout" 
+closedCaptions::set text size for: : 560 = 95%
+showOneByImportance: 560 > 350
+hlsjs::Init
+EmbedPlayer:: Trigger: widgetLoaded
+KAnalytics :: doSendAnalyticsEvent > WIDGET_LOADED
+KDPMapping::setKDPAttribute playerStatusProxy p:loadTime v:6.66 for: kaltura_player
+mw.ClosedCaptions:: loadCaptionsFromApi: 1 [Object]
+mw.ClosedCaptions:: loadCaptionsURLsFromApi> total captions count: 1
+closedCaptions::autoSelectSource: select by defaultLanguageKey: fi
+closedCaptions::buildMenu with sources:  [mw.TextSource]
+TextSource::getCaptionsFromSrt
+mw.TextSource :: loaded from http://cdnbakmi.kaltura.com/api_v3/index.php/service/caption_captionAsset/a…wXydwq9LHyrC_PD-rJ79lBr8Kt0sPfF1J6vtgRrKV445uL4ieJL8QuLFt2vWwm7wHqpMz/.srt Found: 366 captions
+Text track from origin 'http://cdnbakmi.kaltura.com' has been blocked from loading: Not at same origin as the document, and parent of track element does not have a 'crossorigin' attribute. Origin 'http://www.kaltura.com' is therefore not allowed access.
+KDPMapping:: sendNotification > doPlay Object {userInitiated: true}
+kAnalony::Trigger analyticsEvent type = 2
+EmbedPlayer:: play: true isStopped: true
+EmbedPlayerNative::MediaElementBindings
+EmbedPlayer:: trigger preSequence 
+EmbedPlayer:: playInterfaceUpdate
+KAnalytics :: doSendAnalyticsEvent > PLAY
+MediaElement::GetPlayableSources mimeFilter:undefined 7 sources playable out of 9
+EmbedPlayer:: trigger play event::true events:true
+kAnalony::Trigger analyticsEvent type = 3
+kAnalony::Trigger analyticsEvent type = 99
+EmbedPlayer:: playInterfaceUpdate
+EmbedPlayerNative:: issue native play call:
+EmbedPlayer::bufferStart
+KAnalytics :: doSendAnalyticsEvent > BUFFER_START
+EmbedPlayerNative:: OnPlay:: propogate:true paused: false
+EmbedPlayer:: playInterfaceUpdate
+hlsjs::Media attached
+hlsjs :: onLevelSwitch | level = 0 | current bitrate = 925
+hlsjs::manifest loaded, found 4 quality level
+KDPMapping::setKDPAttribute sourceSelector p:visible v:true for: kaltura_player
+KDPMapping::setKDPAttribute sourceSelector p:simpleFormat v:false for: kaltura_player
+hlsjs :: onLevelSwitch | level = 3 | current bitrate = 3908
+hlsjs :: onLevelSwitch | level = 2 | current bitrate = 2491
+EmbedPlayerNative:: 1 subtitles were found:  [Object]
+EmbedPlayer::bufferEnd
+KAnalytics :: doSendAnalyticsEvent > BUFFER_END
+showOneByImportance: 560 > 350
+hlsjs :: onLevelSwitch | level = 1 | current bitrate = 1380
+hlsjs :: onLevelSwitch | level = 0 | current bitrate = 925
+hlsjs :: onLevelSwitch | level = 1 | current bitrate = 1380
+hlsjs :: onLevelSwitch | level = 3 | current bitrate = 3908
+kAnalony::Trigger analyticsEvent type = 99
+HLS.JS ERROR: The video playback was aborted due to a corruption problem or because the video used features your browser did not support. Trying to handle MediaError.
+EmbedPlayer::bufferStart
+KAnalytics :: doSendAnalyticsEvent > BUFFER_START
+KDPMapping:: sendNotification > doPause Object {userInitiated: true}
+kAnalony::Trigger analyticsEvent type = 33
+EmbedPlayer::pause()
+EmbedPlayer:trigger pause:true
+EmbedPlayer::pauseInterfaceUpdate
