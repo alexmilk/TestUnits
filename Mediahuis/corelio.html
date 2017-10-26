@@ -1,0 +1,116 @@
+<script src="http://cdnapi.kaltura.com/p/1467261/sp/146726100/embedIframeJs/uiconf_id/22660801/partner_id/1467261"></script>
+<div id="kaltura_player" style="width:568px;height:320px;"></div>
+<script>
+
+/* 
+* Simple mp4 - Adhese VAST Template
+* Preroll: http://ads.adhese.be/ad3/sl_pre_adhese_-preroll/
+* Postroll: http://ads.adhese.be/ad3/sl_pre_adhese_-postroll/
+* 
+* Doubleclick redirect tag
+* Preroll: http://ads.adhese.be/ad3/sl_pre_doubleclick_-preroll/
+* Postroll: http://ads.adhese.be/ad3/sl_pre_doubleclick_-postroll/
+* 
+* Liverail redirect tag
+* Preroll: http://ads.adhese.be/ad3/sl_pre_liverail_-preroll/
+* Postroll: http://ads.adhese.be/ad3/sl_pre_liverail_-postroll/
+* 
+* Rubicon redirect tag
+* Preroll: http://ads.adhese.be/ad3/sl_pre_rubicon_-preroll/
+* Postroll: http://ads.adhese.be/ad3/sl_pre_rubicon_-postroll/
+*/
+
+
+var IDENTIFIER = 'nGEwQsgXJ7hprExa7E7U9MdvHZF8JkboWpPj7lWEnH3.G7';
+var dataentry = '$url$';
+var totalTime = 0;
+var playhead = 0; 
+var customPackage = [
+    {name: '_SCT ', value: 'news'},
+    {name: 'se', value: 'news'},
+    {name: 'ct', value: 'vod'},
+    {name: 'st', value: 'internal'},
+    {name: 'tv', value: 'news'}
+];
+//var prerollUrl = 'http://ads.adhese.be/ad3/sl_pre_doubleclick_-preroll/';
+// var prerollUrl = 'http://ads.adhese.be/ad3/sl_pre_adhese_-preroll/';
+// var prerollUrl = 'http://ads.adhese.be/ad3/sl_pre_liverail_-preroll/';
+ 
+// 20sec 
+//var prerollUrl = 'http://corelio.adhese.org/creatives/preview/tag.do?adhesePreviewCreativeId=126171&adhesePreviewSlotId=61828&adhesePreviewCreativeTemplate=preroll&adhesePreviewWidth=640&adhesePreviewHeight=480&adhesePreviewTemplateFile=preview.html&adhesePreviewCreativeKey=';
+
+// 20sec 
+// var prerollUrl = 'http://corelio.adhese.org/creatives/preview/tag.do?adhesePreviewCreativeId=121850&adhesePreviewSlotId=61828&adhesePreviewCreativeTemplate=preroll&adhesePreviewWidth=640&adhesePreviewHeight=480&adhesePreviewTemplateFile=preview.html&adhesePreviewCreativeKey=';
+
+// 16sec 
+//var prerollUrl = 'http://corelio.adhese.org/creatives/preview/tag.do?adhesePreviewCreativeId=126087&adhesePreviewSlotId=61828&adhesePreviewCreativeTemplate=preroll&adhesePreviewWidth=640&adhesePreviewHeight=480&adhesePreviewTemplateFile=preview.html&adhesePreviewCreativeKey=';
+
+if(typeof window.MEDIAHUIS !== 'undefined' && typeof window.MEDIAHUIS.ads !== 'undefined') {
+    prerollUrl = window.MEDIAHUIS.ads.preroll;
+}
+kWidget.embed({
+    'targetId': 'kaltura_player',
+    'wid': '_1467261',
+    'uiconf_id': '22660801',
+    'flashvars': {
+        'doubleClick': {
+            'plugin': true,
+            'adTagUrl': 'http://ads.adhese.be/ad3/sl_pre_doubleclick_-preroll/'
+        },
+        'adsOnReplay': true,
+        'metadataProfileId':  3063771,
+        'requiredMetadataFields': true
+    },
+    'cache_st': '1406844945',
+    'entry_id': '1_q7l6gjcg'
+});
+kWidget.addReadyCallback( function(playerId){
+    var kdp = document.getElementById(playerId);
+    kdp.kBind( 'metadataReceived', function (){
+        var location;
+        var customDataList = kdp.evaluate('{mediaProxy.entryMetadata}');
+        var VSOdivs = document.getElementsByClassName('video-source-origin');
+        if (VSOdivs.length > 0) {
+            for(var o = VSOdivs.length; o >= VSOdivs.length; o--) {
+                var SOD = VSOdivs[o-1];
+                if(SOD){
+                    SOD.parentNode.removeChild(SOD);
+                }
+            }
+        }
+        if(customDataList && customDataList.Source) {
+            var val = customDataList.Source;
+            switch (val) {
+                case 'ATV':
+                    location = 'atv';
+                    break;
+                case 'TVL':
+                    location = 'tvl';
+                    break;
+                case 'TVO':
+                    location = 'tvoost';
+                    break;
+            }
+            if(location) {
+                var locURL = 'www.' + location + '.be';
+                var videoSourceOrigin = document.createElement('div');
+                var figure = kdp.parentNode;
+                videoSourceOrigin.className = 'video-source-origin';
+                videoSourceOrigin.innerHTML = 'Bekijk meer video\'s van ' + val +  ' op <a href="http://' + locURL + '" target="_blank">' + locURL + '</a>';
+                figure.parentNode.insertBefore(videoSourceOrigin, figure.nextSibling);
+            }
+        }
+    });
+    kdp.kBind('playerUpdatePlayhead.playheadpos', function(data, id){ playhead = Math.round(data); });
+    kdp.kBind('changeMedia.changetrack', function(data){
+        dataentry = data.entryId;
+        totalTime = kdp.evaluate('{mediaProxy.entry.duration}');
+        gemiusStream.newStream(dataentry, dataentry, totalTime, customPackage, [], IDENTIFIER); 
+    });
+    kdp.kBind('doPlay.playtrack', function(data){ gemiusStream.event(dataentry, dataentry, playhead, 'playing'); });
+    kdp.kBind('doPause.pausetrack', function(data){ gemiusStream.event(dataentry, dataentry, playhead, 'paused'); });
+    kdp.kBind('doStop.stoptrack', function(data){ gemiusStream.event(dataentry, dataentry, playhead, 'stopped'); });
+    kdp.kBind('doSeek.seektrack', function(data){ gemiusStream.event(dataentry, materialIdentifier, playhead, 'seekingStarted'); });
+    kdp.kBind('playerPlayEnd.endtrack', function(data){ gemiusStream.event(dataentry, dataentry, playhead, 'complete'); });
+});
+</script>

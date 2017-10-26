@@ -1,0 +1,97 @@
+<script src="http://cdnapi.kaltura.com/p/1467261/sp/146726100/embedIframeJs/uiconf_id/33632721/partner_id/1467261"></script>
+<div id="kaltura_player" style="width:640px;height:480px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
+<script>
+var marlinSection = '%%marlinSection%%';
+var prerollUrl = 'http://adhese.nieuwsblad.be/ad3/sl_nbo_unknown_-preroll/';
+if(typeof window.MEDIAHUIS !== 'undefined' && typeof window.MEDIAHUIS.ads !== 'undefined') {
+ prerollUrl = window.MEDIAHUIS.ads.preroll;
+} else if (marlinSection.length > 17) {
+  prerollUrl = prerollUrl.replace('unknown', marlinSection);
+}
+
+kWidget.embed({
+ 'targetId': 'kaltura_player',
+ 'wid': '_1467261',
+ 'uiconf_id': '33632721',
+ 'flashvars': {
+  'doubleClick': {
+    'plugin': true,
+    'debugMode': true,
+    'adTagUrl' : 'http://bid.g.doubleclick.net/xbbe/creative/vast?adk=1180443751&d=APEucNV-ni-UbAHrL5vrD9x71VENHyPRHGrsytfYRuYkGnkQLXjU2BKp37cSs7TDw8nSl70E4KefNb6x7j7i6MTnTXV2gWG7Qni7Hs0ec7g1j_kSt60Q-UAqVKDvuMbwP_7GLyc_p1IL6EMgh_LLmOK41dg9JyXhBQm-qUxMY_L-FES9LlAK9V9qyr00ZL0DQk63jxjrWM8mdrwrp43nFqKfOM4g44oIQgYkLb3VnkxVBYC1FOgv146CxqiNrC276YlybUlJ1SM6vGv5w9YXBYLO48nptCnSLnbU4GdfVVan-MeCXBW8tREoxNlge4n2dmY_WtQyipCUZ8EJ0wqfa_JnXniEDVhYEyPC7zePFgTwVZjkiyqfR1PIv3rzyGoSAxW2gSqh60i61NKVvaBvXb8csbdiyZJC1A&frm=0&osd=6&pr=0.638&sdkv=3.225.0&sdr=1&u_asa=1'
+  },
+  'metadataProfileId':  3063771,
+  'requiredMetadataFields': true
+ },
+ 'cache_st': '140634567896',
+ 'entry_id': '1_8sh9698a'
+});
+
+kWidget.addReadyCallback( function(playerId){
+ var kdp = document.getElementById(playerId);
+ var dataentry = '1_8sh9698a';
+ var IDENTIFIER = 'nGEwQsgXJ7hprExa7E7U9MdvHZF8JkboWpPj7lWEnH3.G7';
+ var movieTime = '';
+ var sectionname = (typeof MEDIAHUIS == 'undefined') ? 'nw' : MEDIAHUIS.config.page_sectionname;
+ var customPackage = [
+  {name: '_SCT ', value: 'news'},
+  {name: 'se', value: sectionname},
+  {name: 'ct', value: 'nw'},
+  {name: 'st', value: 'vid.wex.frag.vod.free'},
+  {name: 'tv', value: 'news'}
+ ];
+ kdp.kBind( 'metadataReceived', function (){
+  var location;
+  var customDataList = kdp.evaluate('{mediaProxy.entryMetadata}');
+  var VSOdivs = document.getElementsByClassName('video-source-origin');
+  if (VSOdivs.length > 0) {
+   for(var o = VSOdivs.length; o >= VSOdivs.length; o--) {
+    var SOD = VSOdivs[o-1];
+    if(SOD){
+     SOD.parentNode.removeChild(SOD);
+    }
+   }
+  }
+  if(customDataList && customDataList.Source) {
+   var val = customDataList.Source;
+   switch (val) {
+    case 'ATV':
+     location = 'atv';
+     break;
+    case 'TVL':
+     location = 'tvl';
+     break;
+    case 'TVO':
+     location = 'tvoost';
+     break;
+   }
+   if(location) {
+    var locURL = 'www.' + location + '.be';
+    var videoSourceOrigin = document.createElement('div');
+    var figure = kdp.parentNode;
+    videoSourceOrigin.className = 'video-source-origin';
+    videoSourceOrigin.innerHTML = 'Bekijk meer video\'s van ' + val +  ' op <a href="http://' + locURL + '" target="_blank">' + locURL + '</a>';
+    figure.parentNode.insertBefore(videoSourceOrigin, figure.nextSibling);
+   }
+  }
+ });
+ kdp.kBind('playerUpdatePlayhead', function(data, id){ movieTime = Math.round(data); });
+ kdp.kBind('changeMedia', function(data, id){
+  var totalTime = kdp.evaluate('{mediaProxy.entry.duration}');
+  if (dataentry != data.entryId) gemiusStream.closeStream('21813201', dataentry, movieTime); 
+  dataentry = data.entryId;
+  gemiusStream.newStream('21813201', dataentry, totalTime, customPackage, [], IDENTIFIER); 
+ });
+ function MHGemiusStream (action) {
+  gemiusStream.event('21813201', dataentry, movieTime, action);
+ }
+ kdp.kBind('firstPlay', function(data){
+  kdp.kBind('playerStateChange', function(data){
+    MHGemiusStream(data);
+  });
+  kdp.kBind('doSeek', function(data, id){ MHGemiusStream('seekingStarted'); });
+ });
+ kdp.kBind('doStop', function(data, id){ kdp.kUnbind('playerStateChange'); kdp.kUnbind('doSeek'); });
+ kdp.kBind('playerPlayEnd', function(data, id){ MHGemiusStream('complete'); });
+ kdp.kBind('doReplay', function(){ console.log('replay'); });
+});
+</script>
