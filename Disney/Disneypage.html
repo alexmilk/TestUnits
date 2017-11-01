@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if lt IE 10]>     <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Player Testing</title>
+    <!--<script src="/lib/js/jquery-1.8.3.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="http://www.kaltura.com/lib/js/KalturaEmbedCodeGenerator-1.0.6.min.js"></script>
+
+    <script src="http://analytics.disneyinternational.com/ads/tagsv2/banner/?hub=staging.kaltura.com&site=companion&position=oop,overlay,top-leader,video-mpu"></script>
+
+    <style type="text/css">
+    #kaltura_player {}
+    #ad_request_url {width:80%;}
+    </style>
+</head>
+<body>
+
+<form action="player.php">
+        <div class="form-row">
+            <label>Kaltura Partner Id:
+                <select id="partnerIdSelect" name="partner_id">
+                    <option value="1666321" >Alex 1666321</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-row">
+            <label>Kaltura Player Id:
+                <select name="player_id">
+                    <option value="30897252" >Milky</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-row">
+            <label>Auto Play:
+                <select name="autoPlay">
+                    <option value="0" selected="selected">No</option>
+                    <option value="1" >Yes</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-row">
+            <label>Kaltura Entry Id:
+            <input type="text" name="entry_id" value="0_ap4ppcpd" />
+            </label>
+        </div>
+        <div class="form-row">
+            <label>Ad Request Url:
+            <input type="text" width="80%" id="ad_request_url" name="ad_request_url" value="http://pubads.g.doubleclick.net/gampad/ads?env=vp&gdfp_req=1&impl=s&output=xml_vast2&unviewed_position_start=1&description_url=http%3A%2F%2Fwww.disneychannel.de&iu=/165891808/staging.kaltura.com/companion/homepage&sz=1920x480&url=[REFERRER_URL]&correlator=[TIMESTAMP]&ad_rule=1&cmsid=637&ciu_szs=320x50,300x250&cust_params=&vid=1_qjdmd0cn" />
+            </label>
+        </div>
+        <div class="form-row">
+            <input type="submit" name="submit" value="Enter" />
+        </div>
+    </form>
+
+<p><a href="/dfp-rss-feed/player.php">Clear Selections</a></p>
+<hr />
+
+    <div id="div-oop" class="demo-ad-container">
+        <p>Slot: oop</p>
+        <script>DisneyAds.display('div-oop');</script>
+    </div>
+    <div id="div-overlay" class="demo-ad-container">
+        <p>Slot: overlay</p>
+        <script>DisneyAds.display('div-overlay');</script>
+    </div>
+    <div id="div-top-leader" class="demo-ad-container">
+        <p>Slot: top-leader</p>
+        <script>DisneyAds.display('div-top-leader');</script>
+    </div>
+
+
+        <div id="main" style="position: static;">
+
+        <div class="content">
+            <div class="title">
+                <h1>Video</h1>
+            </div>
+            <div class="contwrap">
+            <!--<p>Some description</p>-->
+
+<div id="myEmbedTarget" style="width:580px;height:326px;"></div>
+<script src="http://cdnapi.kaltura.com/p/1068292/sp/106829200/embedIframeJs/uiconf_id/27384311/partner_id/1068292"></script>
+<script>
+    kWidget.embed({
+        'targetId': 'myEmbedTarget',
+        'wid': '_1068292',
+        'uiconf_id' : '27384311',
+        'entry_id' : '1_qjdmd0cn',
+        'readyCallback': function( playerId ){   
+            kdp = $("#" + playerId).get(0);
+            kdp.addJsListener("playerReady", function(){
+                console.log("onKalturaPlayerReady");
+            });
+            kdp.addJsListener("preSequenceStart", function(){
+                console.log("preSequenceStart");
+            });
+            kdp.addJsListener("preSequenceComplete", function(){
+                console.log("preSequenceComplete");
+            });
+            kdp.addJsListener("firstPlay", function(){
+                console.log("firstPlay");
+            });
+            kdp.addJsListener("playerPlayed", function(){
+                console.log("playerPlayed");
+            });
+            kdp.addJsListener("playerStateChange", function(myEvent){
+                console.log("playerStateChange " + myEvent);
+            });
+            kdp.addJsListener("doPlay", function(){
+                console.log("onKalturaPlayEvent");
+            });
+            //kdp.addJsListener("playerUpdatePlayhead", function(){
+            //    console.log("kalturaCheckInteraction");
+            //});
+            kdp.addJsListener("playerPlayEnd", function(){
+                console.log("onKalturaVideoEnded");
+            });
+            //player.playerManager = kdp;
+        },
+        'flashvars':{ // flashvars allows you to set runtime uiVar configuration overrides.
+                                    "doubleClick.adTagUrl":"http://pubads.g.doubleclick.net/gampad/ads?env=vp&gdfp_req=1&impl=s&output=xml_vast2&unviewed_position_start=1&description_url=http%3A%2F%2Fwww.disneychannel.de&iu=/165891808/staging.kaltura.com/companion/homepage&sz=1920x480&url=[REFERRER_URL]&correlator=[TIMESTAMP]&ad_rule=1&cmsid=637&ciu_szs=320x50,300x250&cust_params=&vid=1_qjdmd0cn",
+                                                "doubleClick.htmlCompanions": "div-video-mpu:300:250"
+        }
+    });
+</script>
+
+
+<div>
+    <h2>Video Companion</h2>
+    <div id="div-video-mpu" class="demo-ad-container">
+        <p>Slot: video-mpu</p>
+        <script>DisneyAds.display('div-video-mpu');</script>
+    </div>
+</div>
+            </div><!-- end contwrap -->
+        </div><!-- end content -->
+    </div><!-- end #main -->
+
+
+    <a href="#" onclick="DisneyAds.refresh(); return false;">Click to show ads</a>
+    <script type="text/javascript">
+    // want to update when the partner id is changed
+    $('#partnerIdSelect').change(function(e){
+        var path = window.location.pathname;
+        var partnerId = $(this).val();
+        window.location = path + '?partner_id=' + partnerId;
+    });
+    </script>
+</body>
+</html>
