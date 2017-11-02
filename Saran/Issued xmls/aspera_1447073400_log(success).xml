@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<mrss
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+    <channel>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_wr3zkq52</entryId>
+            <createdAt>1447690448</createdAt>
+            <updatedAt>1447691042</updatedAt>
+            <title>138A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>138A</name>
+            <status>2</status>
+            <description>138A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_wr3zkq52/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1497000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_wr3zkq52/v/2/pv/4/flavorId/0_ps0kpr4o/name/a.mp4" flavorAssetId="0_ps0kpr4o" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:16" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="87839367">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_wr3zkq52/v/2/pv/4/flavorId/0_dl64m2uu/name/a.mov" flavorAssetId="0_dl64m2uu" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:09" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5676769144">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_r0m3ib83</entryId>
+            <createdAt>1447690450</createdAt>
+            <updatedAt>1447691043</updatedAt>
+            <title>139A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>139A</name>
+            <status>2</status>
+            <description>139A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_r0m3ib83/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1532000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_r0m3ib83/v/2/pv/4/flavorId/0_1cocl8zr/name/a.mp4" flavorAssetId="0_1cocl8zr" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:17" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="89933177">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_r0m3ib83/v/2/pv/4/flavorId/0_ikxad4to/name/a.mov" flavorAssetId="0_ikxad4to" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:10" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5811616112">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_ltk9kwbz</entryId>
+            <createdAt>1447690451</createdAt>
+            <updatedAt>1447691463</updatedAt>
+            <title>143A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>143A</name>
+            <status>2</status>
+            <description>143A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_ltk9kwbz/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1570000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_ltk9kwbz/v/2/pv/4/flavorId/0_1a2w903u/name/a.mp4" flavorAssetId="0_1a2w903u" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:19" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="92153209">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_ltk9kwbz/v/2/pv/4/flavorId/0_i8qe7676/name/a.mov" flavorAssetId="0_i8qe7676" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:11" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5956170800">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_9h8yrw4w</entryId>
+            <createdAt>1447690452</createdAt>
+            <updatedAt>1447692526</updatedAt>
+            <title>144A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>144A</name>
+            <status>2</status>
+            <description>144A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_9h8yrw4w/version/100012/acv/102"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1448000</duration>
+                <flavorParamsIds>0,487041,487051,487061</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_9h8yrw4w/v/2/pv/4/flavorId/0_suplonhy/name/a.mp4" flavorAssetId="0_suplonhy" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:22" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="84977556">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_9h8yrw4w/v/2/pv/4/flavorId/0_y0mzs0cm/name/a.mp4" flavorAssetId="0_y0mzs0cm" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:22" flavorParamsId="487051" flavorParamsName="Basic/Small - WEB/MBL (H264/600)" format="isom" videoBitrate="669" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="121171271">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_9h8yrw4w/v/2/pv/4/flavorId/0_cmdr4dq1/name/a.mp4" flavorAssetId="0_cmdr4dq1" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:22" flavorParamsId="487061" flavorParamsName="SD/Small - WEB/MBL (H264/900)" format="isom" videoBitrate="970" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="175524560">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>ipad</tag>
+                    <tag>ipadnew</tag>
+                    <tag>dash</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_9h8yrw4w/v/2/pv/4/flavorId/0_vxt9pr85/name/a.mov" flavorAssetId="0_vxt9pr85" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:13" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5491259840">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_f9zazbss</entryId>
+            <createdAt>1447690454</createdAt>
+            <updatedAt>1447691311</updatedAt>
+            <title>147A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>147A</name>
+            <status>2</status>
+            <description>147A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_f9zazbss/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1451000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_f9zazbss/v/2/pv/4/flavorId/0_o7c24l27/name/a.mp4" flavorAssetId="0_o7c24l27" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:21" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="85169418">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_f9zazbss/v/2/pv/4/flavorId/0_2mhvlcov/name/a.mov" flavorAssetId="0_2mhvlcov" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:14" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5504456336">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_hk0dd9ox</entryId>
+            <createdAt>1447690455</createdAt>
+            <updatedAt>1447691035</updatedAt>
+            <title>148A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>148A</name>
+            <status>2</status>
+            <description>148A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_hk0dd9ox/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1464000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hk0dd9ox/v/2/pv/4/flavorId/0_tilgj6mr/name/a.mp4" flavorAssetId="0_tilgj6mr" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:22" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="85921764">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hk0dd9ox/v/2/pv/4/flavorId/0_3kb2t7fu/name/a.mov" flavorAssetId="0_3kb2t7fu" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:15" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5552540096">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_4610qwm3</entryId>
+            <createdAt>1447690456</createdAt>
+            <updatedAt>1447691432</updatedAt>
+            <title>151A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>151A</name>
+            <status>2</status>
+            <description>151A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_4610qwm3/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1486000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_4610qwm3/v/2/pv/4/flavorId/0_vdivnlaw/name/a.mp4" flavorAssetId="0_vdivnlaw" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:23" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="87221557">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_4610qwm3/v/2/pv/4/flavorId/0_zbwp6nib/name/a.mov" flavorAssetId="0_zbwp6nib" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:16" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5636269588">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_hszrw1rn</entryId>
+            <createdAt>1447690457</createdAt>
+            <updatedAt>1447693256</updatedAt>
+            <title>170A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>170A</name>
+            <status>2</status>
+            <description>170A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_hszrw1rn/version/100022/acv/132"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1438000</duration>
+                <flavorParamsIds>0,487041,487051,487061,487071</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hszrw1rn/v/2/pv/4/flavorId/0_d6a1g3cy/name/a.mp4" flavorAssetId="0_d6a1g3cy" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:24" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="84419585">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hszrw1rn/v/2/pv/4/flavorId/0_fzx4actb/name/a.mp4" flavorAssetId="0_fzx4actb" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:24" flavorParamsId="487051" flavorParamsName="Basic/Small - WEB/MBL (H264/600)" format="isom" videoBitrate="669" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="120385181">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hszrw1rn/v/2/pv/4/flavorId/0_2bp4phc8/name/a.mp4" flavorAssetId="0_2bp4phc8" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:24" flavorParamsId="487061" flavorParamsName="SD/Small - WEB/MBL (H264/900)" format="isom" videoBitrate="969" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="174296005">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>ipad</tag>
+                    <tag>ipadnew</tag>
+                    <tag>dash</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hszrw1rn/v/2/pv/4/flavorId/0_rqcgh94q/name/a.mp4" flavorAssetId="0_rqcgh94q" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:24" flavorParamsId="487071" flavorParamsName="SD/Large - WEB/MBL (H264/1500)" format="isom" videoBitrate="1563" videoCodec="avc1" audioBitrate="128" audioCodec="aac" frameRate="25" height="576" width="1024" fileSize="281009863">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>ipad</tag>
+                    <tag>ipadnew</tag>
+                    <tag>dash</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_hszrw1rn/v/2/pv/4/flavorId/0_i85evvb3/name/a.mov" flavorAssetId="0_i85evvb3" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:17" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5455462448">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_wix0g12c</entryId>
+            <createdAt>1447690458</createdAt>
+            <updatedAt>1447691356</updatedAt>
+            <title>171A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>171A</name>
+            <status>2</status>
+            <description>171A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_wix0g12c/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1529000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_wix0g12c/v/2/pv/4/flavorId/0_zvddj2c1/name/a.mp4" flavorAssetId="0_zvddj2c1" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:25" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="89719378">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_wix0g12c/v/2/pv/4/flavorId/0_lsjb4qd7/name/a.mov" flavorAssetId="0_lsjb4qd7" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:18" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5797964548">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+        <item>
+            <result>
+                <errorDescription></errorDescription>
+            </result>
+            <action>add</action>
+            <entryId>0_4n4g0is1</entryId>
+            <createdAt>1447690459</createdAt>
+            <updatedAt>1447691249</updatedAt>
+            <title>172A</title>
+            <type>1</type>
+            <licenseType>-1</licenseType>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>172A</name>
+            <status>2</status>
+            <description>172A</description>
+            <thumbnailUrl url="http://cfvod.kaltura.com/p/1854911/sp/185491100/thumbnail/entry_id/0_4n4g0is1/version/100000/acv/42"/>
+            <tags>
+                <tag>aspera upload</tag>
+            </tags>
+            <partnerData></partnerData>
+            <accessControlId>1991841</accessControlId>
+            <conversionProfileId>6592621</conversionProfileId>
+            <media>
+                <mediaType>1</mediaType>
+                <duration>1478000</duration>
+                <flavorParamsIds>0,487041</flavorParamsIds>
+                <plays>0</plays>
+                <views>0</views>
+            </media>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_4n4g0is1/v/2/pv/4/flavorId/0_b9cxmvug/name/a.mp4" flavorAssetId="0_b9cxmvug" isSource="false" containerFormat="isom" extension="mp4" createdAt="2015-11-16 11:14:27" flavorParamsId="487041" flavorParamsName="Basic/Small - WEB/MBL (H264/400)" format="isom" videoBitrate="469" videoCodec="avc1" audioBitrate="64" audioCodec="aac" frameRate="25" height="360" width="640" fileSize="86737765">
+                <tags>
+                    <tag>mobile</tag>
+                    <tag>web</tag>
+                    <tag>mbr</tag>
+                    <tag>iphone</tag>
+                    <tag>iphonenew</tag>
+                </tags>
+            </content>
+            <content url="http://cfvod.kaltura.com/pd/p/1854911/sp/185491100/serveFlavor/entryId/0_4n4g0is1/v/2/pv/4/flavorId/0_o139xz8z/name/a.mov" flavorAssetId="0_o139xz8z" isSource="true" containerFormat="qt" extension="mov" createdAt="2015-11-16 11:14:19" flavorParamsId="0" flavorParamsName="Source" format="qt" videoBitrate="31027" videoCodec="dvcp" audioBitrate="0" audioCodec="" frameRate="25" height="576" width="720" fileSize="5604871040">
+                <tags>
+                    <tag>source</tag>
+                </tags>
+            </content>
+        </item>
+    </channel>
+</mrss>

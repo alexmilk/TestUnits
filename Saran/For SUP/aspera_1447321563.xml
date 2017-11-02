@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<mrss xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ingestion.xsd">
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>180B</name>
+            <description>180B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="180B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>181A</name>
+            <description>181A</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="181A.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>181B</name>
+            <description>181B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="181B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>182A</name>
+            <description>182A</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="182A.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>182B</name>
+            <description>182B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="182B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>183A</name>
+            <description>183A</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="183A.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>183B</name>
+            <description>183B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="183B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>184B</name>
+            <description>184B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="184B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>185A</name>
+            <description>185A</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="185A.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>melih.mutlu@saranonline.com</userId>
+            <name>185B</name>
+            <description>185B</description>
+            <tags>
+                <tag>Aspera Upload</tag>
+            </tags>
+            <accessControlId>1991841</accessControlId>
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="185B.mov"/>
+                </content>
+            </contentAssets>
+        </item>
+    </channel>
+</mrss>
