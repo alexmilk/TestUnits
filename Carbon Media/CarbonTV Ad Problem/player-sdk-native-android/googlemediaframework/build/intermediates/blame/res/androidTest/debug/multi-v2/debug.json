@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/build/intermediates/res/merged/androidTest/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/build/intermediates/bundles/debug/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,16,20",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,172,222,268,308,352,415,469,520,738,937",
+                        "endLines": "2,3,4,5,6,7,8,9,10,15,19,21",
+                        "endColumns": "59,56,49,45,39,43,62,53,50,12,12,12",
+                        "endOffsets": "110,167,217,263,303,347,410,464,515,733,932,1022"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+include ':app'
+
+include ':googlemediaframework'
+project(':googlemediaframework').projectDir=new File('../player-sdk-native-android/googlemediaframework')
+
+include ':playerSDK'
+project(':playerSDK').projectDir=new File('../player-sdk-native-android/playerSDK')

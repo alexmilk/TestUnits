@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/playerSDK/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/playerSDK/src/debug/shaders"/></dataSet></merger>

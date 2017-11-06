@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/playerSDK/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/playerSDK/build/intermediates/bundles/debug/res/values-w820dp-v13/values-w820dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "68",
+                        "endOffsets": "119"
+                    }
+                }
+            ]
+        }
+    ]
+}

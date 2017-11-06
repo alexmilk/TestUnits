@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+	package
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:19:5-58
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:1-23:12
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:18:11-69
+application
+ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml:21:5-20
+uses-sdk
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		ADDED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
+		INJECTED from /Library/WebServer/Documents/Projects/TestUnits/Carbon Media/CarbonTV Ad Problem/player-sdk-native-android/googlemediaframework/src/main/AndroidManifest.xml
