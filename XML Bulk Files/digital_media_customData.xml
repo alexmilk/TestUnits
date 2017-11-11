@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<mrss xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ingestion.xsd">
+    <channel>
+        <item>
+            <action>add</action>
+            <type>1</type>
+            <userId>gdelfiner@gmail.com</userId>
+            <name>Test Video</name>
+            <description>This is a test</description>
+            <tags>
+                <tag>Test</tag>
+            </tags>
+            <categories>
+                <category></category>
+                <category></category>
+            </categories>
+            <!-- <accessControlId>...</accessControlId> -->
+            <media>
+                <mediaType>1</mediaType>
+            </media>
+            <contentAssets>
+                <content>
+                    <dropFolderFileContentResource filePath="cars_5.mp4"></dropFolderFileContentResource>
+                </content>
+            </contentAssets>
+            <thumbnails>
+                <thumbnail isDefault="true">
+                    <urlContentResource url="https://media.glassdoor.com/sqll/418526/kaltura-squarelogo-1470416679757.png"></urlContentResource>
+                </thumbnail>
+            </thumbnails>
+            <customDataItems> 
+                <customData metadataProfileId="9219071">
+                    <xmlData>
+                        <metadata>
+                            <Genre>Drama</Genre>
+                            <Actors>Timothy Hutton,David Strathairn,Leelee Sobieski</Actors>
+                            <Directors>Terry Green</Directors>
+                            <Writers></Writers>
+                            <Series_title></Series_title>
+                            <Episode_title></Episode_title>
+                            <Rating>PG-13</Rating>
+                            <Release_date>1502658000</Release_date>
+                        </metadata>
+                    </xmlData>
+                </customData>
+                </customDataItems> 
+        </item>
+    </channel>
+</mrss>
