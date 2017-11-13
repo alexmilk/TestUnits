@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mrss>
+  <channel>
+    <item>
+      <type>1</type>
+      <licenseType>1</licenseType>
+      <referenceId>captest0006</referenceId>
+      <userId>DOLAutoImport</userId>
+      <tags>
+        <tag>dolautoimport</tag>
+        <tag>us-video</tag>
+      </tags>
+      <conversionProfile>DOL_DEFAULT</conversionProfile>
+      <media>
+        <mediaType>1</mediaType>
+      </media>
+      <subTitles>
+        <subTitle captionParams="dxfp-english" isDefault="true">
+          <tags>
+            <tag></tag>
+          </tags>
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/captest0006-cap2ttml.xml">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </subTitle>
+        <subTitle captionParams="webvtt-english">
+          <tags>
+            <tag></tag>
+          </tags>
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/english_subtitles.vtt">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </subTitle>
+      </subTitles>
+    </item>
+  </channel>
+</mrss>

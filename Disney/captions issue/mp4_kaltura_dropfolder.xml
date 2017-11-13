@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mrss>
+  <channel>
+    <item>
+      <type>1</type>
+      <licenseType>1</licenseType>
+      <referenceId>captest0006</referenceId>
+      <userId>DOLAutoImport</userId>
+      <tags>
+        <tag>dolautoimport</tag>
+        <tag>us-video</tag>
+        <tag>access_required</tag>
+        <tag>dolautoimport</tag>
+        <tag>us-video</tag>
+      </tags>
+      <conversionProfile>DOL_DEFAULT</conversionProfile>
+      <media>
+        <mediaType>1</mediaType>
+      </media>
+      <msDuration>7002</msDuration>
+      <contentAssets>
+        <content flavorParams="Source">
+          <dropFolderFileContentResource filePath="auto.2016-08-04.captest0006.6552.01.captest0006-h264b_aac_320x240_96x32.mp4">
+            <fileChecksum type="sha1">4e82e5f26d90e90cc8a9b242eb227f98a323b813</fileChecksum>
+          </dropFolderFileContentResource>
+        </content>
+        <content flavorParams="mp4-1000">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/d88ab9-captest0006-h264m_aac_848x480_904x96.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-128">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/d23266-captest0006-h264b_aac_320x240_96x32.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-1500">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/8d7337-captest0006-h264m_aac_1280x720_1404x96.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-2200">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/90baba-captest0006-h264m_aac_1280x720_2104x96.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-414">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/f966de-captest0006-h264b_aac_480x320_350x64.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-4300">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/d8cf00-captest0006-h264h_aac_1920x1080_4140x160.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-600">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/ab8b60-captest0006-h264m_aac_848x480_536x64.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="mp4-6000">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/cba626-captest0006-h264h_aac_1920x1080_5840x160.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-1000">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/066b84-captest0006-h264m_aac_848x480_904x96.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-128">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/067329-captest0006-h264b_aac_320x240_96x32.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-1500">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/225da4-captest0006-h264m_aac_1280x720_1404x96.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-2200">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/7eaec9-captest0006-h264m_aac_1280x720_2104x96.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-414">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/bd0a85-captest0006-h264b_aac_480x320_350x64.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-4300">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/0883b7-captest0006-h264h_aac_1920x1080_4140x160.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-600">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/0b49b9-captest0006-h264m_aac_848x480_536x64.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="access-6000">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/88af93-captest0006-h264h_aac_1920x1080_5840x160.access.mp4">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="HLS/High-904">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/ab09a7-h264m_aac_848x480_904x96.m3u8">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="HLS/Low-96">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/b30b68-h264b_aac_320x240_96x32.m3u8">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="HLS/Med-350">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/65f31c-h264b_aac_480x320_350x64.m3u8">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="HLS/Med-536">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/3eab3f-h264m_aac_848x480_536x64.m3u8">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+        <content flavorParams="HLS/Master">
+          <remoteStorageContentResource url="production/secure/channel_longform/unknown/captest0006/be6796-master.m3u8">
+            <storageProfileId>1252</storageProfileId>
+          </remoteStorageContentResource>
+        </content>
+      </contentAssets>
+    </item>
+  </channel>
+</mrss>
