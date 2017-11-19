@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Configuring the DoubleClick plugin for flash based ads.</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="share.css">
+</head>
+<body>
+	<h2>DoubleClick Player with debugging enabled.</h2>
+<script src="http://cdnapi.kaltura.com/mwEmbed/mwEmbedLoader.php/p/1897241/sp/189724100/embedIframeJs/uiconf_id/33256021/partner_id/1897241"></script>
+	<div id="kaltura_player_1460032511" style="width: 560px; height: 395px; float: left; margin-right: 20px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+	<span itemprop="name" content="Bugatti Vision Gran Turismo: Unveiled"></span>
+	<span itemprop="description" content=""></span>
+	<span itemprop="duration" content="193"></span>
+	<span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1994891/sp/166632100/thumbnail/entry_id/1_ectaz4lo/version/100011/acv/141"></span>
+	<span itemprop="width" content="560"></span>
+	<span itemprop="height" content="395"></span>
+	</div>
+
+	<!--<script>-->
+		<!--kWidget.addReadyCallback(function(playerId) {-->
+			<!--var kdp = document.getElementById(playerId);-->
+                <!--kdp.addJsListener('adEnd', function() {-->
+                    <!--kWidget.destroy('kaltura_player_1460032511');-->
+                <!--})-->
+			<!--})-->
+	<!--</script>-->
+
+	<h3>DoubleClick Config:</h3>
+	<textarea id="adTag" style="width: 560px; height: 250px; background-color: #dcdcdc;"></textarea>
+	<div style="clear: none;"></div>
+	<p id="strongWords">This is a paragraph with some <stong>strong</stong> words that <strong>should</strong> be painted in red, <strong>but</strong> only the stong words.</p>
+	<button id="makeRedStrong" onclick="stronger()">Make strong words in red!</button>
+	<script>
+		$("#makeRedStrong").click (function () {
+		    $("#strongWords").find("strong").css("color", "red");
+        })
+	</script>
+
+	<br>
+	<button id="reload" name="Reload">Reload Player</button><button id="destroy" name="destroy" style="margin-left: 10px;">Destroy Player</button>
+	<br>
+	<input type="text" style="width: 560px; margin-top: 20px;" placeholder="AdTag URL"></input>
+	<script>
+//        mw.setConfig( 'debug' , false ); //Should enable setConfig debug or 'debugKalturaPlayer' in the browser directly.
+
+        kWidget.embed({
+	"targetId": "kaltura_player_1460032511",
+	"wid": "_1897241",
+	"uiconf_id": 33256021,
+	"flashvars": {
+	"streamerType": "auto",
+	"Kaltura.ForceFlashOnDesktop": false,
+//	"EmbedPlayer.DisableHTML5FlashFallback": true,
+	"LeadWithHLSOnFlash": true,
+	"liveCore.disableLiveCheck": true,
+	"DoubleClick": {
+		"plugin": false,
+		"adTagUrl": "",
+		"prerollUrl": null,
+        "numPreroll": 2,
+		"leadWithFlash": true,
+		"trackCuePoints": false,
+		"debugMode": true, //Should enable debugMode for DoubleClick systems.
+		"adsManagerLoadedTimeout": 15000
+},
+        "skipBtn": {
+            "label": "Skip Ad",
+            "skipOffset": 5, //Determines the offset before the skip button appears.
+            "plugin": true
+        },
+        "EmbedPlayer.ForceKPlayer": true,
+		"disableHLSOnJs": true,
+		"bumper":{
+			"preSequence": 0
+		},
+	"autoPlay": false
+	//"ADZONE": '/4160/mv.inctest',
+	//"TAGS": 'dfp_video_test',
+},
+	"cache_st": 1460032511,
+	"entry_id": "0_t9srnex5"
+});
+</script>
+
+	</body>
+	</html>
