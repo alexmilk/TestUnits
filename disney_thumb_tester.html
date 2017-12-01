@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Disney thumbnail tester</title>
+    <script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #FFFFFF;">
+
+<!--Player main div-->
+
+<script src="http://cdnapi.kaltura.com/p/1068292/sp/106829200/embedIframeJs/uiconf_id/35976132/partner_id/1068292"></script>
+
+
+<div style="width:1125px; height: 360px; margin: 0">
+    <div id="kaltura_player_1466954509"
+         style="width: 560px; height: 320px; float: left; border-width: 1px; border-style: solid; border-color: black; box-sizing: border-box;"
+         itemprop="video" itemscope
+         itemtype="http://schema.org/VideoObject">
+        <span itemprop="name" content="Mad Max - Fury Road"></span>
+        <span itemprop="description" content=""></span>
+        <span itemprop="duration" content="153"></span>
+        <span itemprop="thumbnail" content="http://cfvod.kaltura.com/p/1068292/sp/106829200/thumbnail/entry_id/1_z6rip2v8/version/100032/acv/531"></span>
+        <span itemprop="width" content="560"></span>
+        <span itemprop="height" content="315"></span>
+    </div>
+
+    <script>
+        kWidget.addReadyCallback(function (playerId) {
+            let player = document.kaltura_player_1466954509_ifp.kaltura_player_1466954509;
+            let kdp = document.getElementById(playerId);
+            kdp.kBind('doPause', function () {
+               player.showThumbnail();
+            })
+        });
+    </script>
+    <script>
+        mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+        mw.setConfig('debug', true);
+        mw.setConfig("debugTarget", "analyticsLog");
+        mw.setConfig("autoScrollDebugTarget", true);
+        kWidget.embed({
+            "targetId": "kaltura_player_1466954509",
+            "wid": "_1068292",
+            "uiconf_id": 35976132,
+            "flashvars": {
+                "controlBarContainer.plugin": false,
+                "largePlayBtn.plugin": false,
+                "titleLabel.plugin": false,
+                "streamerType": "auto",
+                "EmbedPlayer.WebKitPlaysInline": false,
+                "autoPlay": true,
+                "autoMute": true,
+            },
+            "cache_st": 1466954509,
+            "entry_id": "1_z6rip2v8"
+        });
+    </script>
+</body>
+
+</html>
