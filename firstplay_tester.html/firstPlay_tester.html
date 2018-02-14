@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FirstPlay event tester</title>
+    <style>
+        .greenText {
+            color: lawngreen;
+        }
+
+        #redText {
+            color: red;
+        }
+
+        .texts {
+            font-family: Verdana;
+        }
+    </style>
+    <script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #FFFFFF; text-align: center">
+
+<!--Player main div-->
+<script src="http://cdnapi.kaltura.com/html5/html5lib/v2.65/mwEmbedLoader.php/p/2051731/uiconf_id/32736212"></script>
+<div id="details"
+     style="width: 560px; height: auto; margin: auto; text-align: left; border-width: 1px; border-style: solid; border-color: black; padding-bottom: 10px; padding-left: 10px; box-sizing: border-box;">
+    <h2 class="texts">FirstPlay event tester - window.alert bind</h2>
+    <h4 id="uiconf"></h4>
+    <br>
+    <h4 id="entrydit"></h4>
+</div>
+<br>
+<div style="width:560px; height: 360px; margin: 0 auto">
+    <div id="kaltura_player_1466954509"
+         style="width: 560px; height: 320px; border-width: 1px; border-style: solid; border-color: black; box-sizing: border-box; margin: 0 auto"
+         itemprop="video" itemscope
+         itemtype="http://schema.org/VideoObject">
+        <span itemprop="name" content="Mad Max - Fury Road"></span>
+        <span itemprop="description" content=""></span>
+        <span itemprop="duration" content="153"></span>
+        <span itemprop="thumbnail"
+              content="http://cfvod.kaltura.com/p/2051731/sp/205173100/thumbnail/entry_id/1_qu8l9lmk/version/100032/acv/531"></span>
+        <span itemprop="width" content="560"></span>
+        <span itemprop="height" content="315"></span>
+    </div>
+
+    <br>
+    <script>
+        //kBinds and other functions
+        kWidget.addReadyCallback(function (playerId) {
+            var kdp = document.getElementById(playerId);
+            kdp.kBind('firstPlay', function () {
+                window.alert("firstPlay initiated");
+            })
+        });
+
+        function setEntry() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                var input = document.getElementById("adInput").value;
+                kdp.sendNotification("changeMedia", {"entryId": input});
+            })
+        }
+        function setKS() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                var input = document.getElementById("ksInput").value;
+                kdp.setKDPAttribute('servicesProxy.kalturaClient', 'ks', input);
+            })
+        }
+        function doPlay() {
+            kWidget.addReadyCallback(function (playerId) {
+                var kdp = document.getElementById(playerId);
+                kdp.sendNotification("doPlay");
+            })
+        }
+    </script>
+    <script>
+        var preroll = "https://ads.e-planning.net/eb/4/175df/player/preroll?ct=1&o=v&ma=1&vv=3";
+        mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+        mw.setConfig('debug', true);
+        mw.setConfig("debugTarget", "analyticsLog");
+        mw.setConfig("autoScrollDebugTarget", true);
+        kWidget.embed({
+            "targetId": "kaltura_player_1466954509",
+            "wid": "_2051731",
+            "uiconf_id": 32736212,
+            "flashvars": {
+                "streamerType": "auto",
+                "EmbedPlayer.WebKitPlaysInline": false,
+                "autoPlay": false
+            },
+            "cache_st": 1466954509,
+            "entry_id": "1_qu8l9lmk"
+        });
+    </script>
+</div>
+</body>
+
+</html>
