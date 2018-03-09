@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Standalone Kaltura V3 Player</title>
+    <script src="urlsearchparams_polyfill.js"></script>
+    <!-- 41341612 new studio player id -->
+    <script src="https://cdnapisec.kaltura.com/p/1068292/sp/106829200/embedPlaykitJs/uiconf_id/41048111" type="text/javascript"></script>
+</head>
+<body>
+<div id="player-placeholder-container">
+    <div id="player-placeholder" style="width: 1024px; height: 748px; position: relative;"></div>
+</div>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search),
+        ads = urlParams.has('ads'),
+        entryId = urlParams.get('entryId'),
+        log = urlParams.has('log'),
+        logLevel = urlParams.get('log');
+
+    var ima = {
+      adTagUrl: "https://pubads.g.doubleclick.net/gampad/ads?sz=768x432&adRule=1&iu=%2F7046%2Fdcom%2Fvideo%2Fhomepage&ciu_szs=300x60&gdfp_req=1&env=vp&output=xml_vast3&unviewed_position_start=1&url=http%3A%2F%2Fvideo_disney_com-dev7.fe.mh.disney.io%2F%3Fbypass_cache%3D21&correlator=1657288194825370&cmsid=2044&cust_params=unit%3Ddol%26siteSection%3Dhome%26contentType%3Dhomepage%26pageName%3Dhomepage%26contentId%3D4b91dd6771b40ef9517c232b%26hostname%3Dvideo_disney_com-dev7.fe.mh.disney.io&description_url=http%3A%2F%2Fdisney.com&vid=1_m5ewnccz&eid=634360307&sdkv=h.3.191.1&sdki=3c0d&scor=1820379652558221&adk=545954012&u_so=l&osd=2&frm=0&sdr=1&is_amp=0&mpt=kaltura-player-js&mpv=0.17.0&afvsz=450x50%2C468x60%2C480x70&ged=ve4_td4_tt1_pd4_la4000_er487.388.641.688_vi187.0.931.1750_vp100_eb24171"
+    };
+
+    var config = {
+      partnerId: "1068292",
+//      ks: "ZDYyYjE4NmNkYTMyN2I3ODdiMTJkOTM3MzgzMmRjODhiNTYyNTk1YXwxMDY4MjkyOzEwNjgyOTI7MTUxOTY0MzEwMDsyOzE1MTk1NTY3MDAuMDIwNztwaGlsaXAud2hpdGVoYWxsQGRpc25leS5jb207KixkaXNhYmxlZW50aXRsZW1lbnQ7Ow==",
+      playback: {
+        autoplay: true,
+        playsinline: false
+      },
+      plugins: {}
+    };
+
+    if(ads) {
+      config.plugins.ima = ima;
+    }
+
+    if(log) {
+      config.logLevel = logLevel || 'DEBUG';
+    }
+
+    try {
+      var kalturaPlayer = KalturaPlayer.setup('player-placeholder', config);
+      kalturaPlayer.loadMedia(entryId);
+      window.player = kalturaPlayer;
+    } catch (e) {
+      console.error(e.message);
+    }
+</script>
+</body>
+</html>
