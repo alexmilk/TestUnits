@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Closed Captions</title>
+    <script type="text/javascript" src="http://player.kaltura.com/tests/qunit/qunit-bootstrap.js"></script>
+    <script type="text/javascript" src="http://cdnapi.kaltura.com/html5/html5lib/v2.49/mwEmbedLoader.php/p/1742301/uiconf_id/41382601"></script>
+    <script type="text/javascript" src="http://player.kaltura.com/docs/js/doc-bootstrap.js"></script>
+
+</head>
+
+<body>
+<h2> Closed Captions Tester - iOS Inline Playback </h2>
+<div id="myVideoTarget" style="width:400px;height:330px;float:left">
+
+</div>
+<br>
+
+
+<script>
+
+	kWidget.featureConfig({
+		'targetId': 'myVideoTarget',
+		'wid': '_1742301',
+		'uiconf_id': '41382601',
+		'entry_id': '0_sfb79nkd',
+		'flashvars': {
+            'EmbedPlayer.WebKitPlaysInline':true,
+		    'Kaltura.UseAppleAdaptive': false,
+			'disableTrackElement': true,
+			'closedCaptions': {
+				'hideWhenEmpty': true,
+                'plugin': true,
+                'whiteListLanguagesCodes': 'en,es,fr,jp',
+				'layout': 'ontop',
+				'useCookie': true,
+                'forceWebVTT': true,
+				'defaultLanguageKey': 'en',
+                'forceLoadLanguage': true,
+				'fontsize': 12,
+				'bg' : '0x335544',
+				'fontFamily' : 'Arial',
+				'fontColor' : '0xFFFFFF',
+				'useGlow' : 'false',
+				'glowBlur': 4,
+				'glowColor': '0x133693'
+			}
+		},
+		'readyCallback': function( playerId ){
+			$('.changeMeda').click(function(){
+				$('#' + playerId )[0].sendNotification('changeMedia', { 'entryId': $(this).attr('data-entryId') });
+				return false;
+			})
+			$('#changeMediaCaptions')
+		}
+	});
+</script>
+
+<script type="text/javascript" src="resources/qunit-kaltura-bootstrap.js"></script>
+</body>
+</html>
