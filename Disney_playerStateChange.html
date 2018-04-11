@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Video</title>
+    <style>
+        .greenText {
+            color: lawngreen;
+        }
+        .texts {
+            font-family: Verdana;
+        }
+        #analyticsLog {
+            width: 555px;
+            height: 320px;
+            margin-left: 10px;
+            background-color: black;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border: 1px solid black;
+            font-family: Arial;
+            padding: 5px;
+            font-size: 11px;
+            word-wrap: break-word;
+
+        }
+
+    </style>
+    <script src="http://player.kaltura.com/resources/jquery/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #FFFFFF;">
+
+<!--Player main div-->
+<script src="http://cdnapi.kaltura.com/p/1068292/sp/106829200/embedIframeJs/uiconf_id/40058201/partner_id/1068292"></script>
+<div id="details"
+     style="width: 1125px; height: auto; margin: auto; text-align: left; border-width: 1px; border-style: solid; border-color: #cecece; padding-bottom: 10px; padding-left: 10px; box-sizing: border-box;">
+    <h2 id="entryName" class="texts"></h2>
+    <h4 id="uiconf"></h4>
+    <br>
+    <h4 id="entrydit"></h4>
+</div>
+<br>
+
+<div style="width:1125px; height: 340px; margin: auto;">
+    <div id="kaltura_player_1466954509"
+         style="width: 560px; height: 320px; float: left; border-width: 1px; border-style: solid; border-color: #cecece; box-sizing: border-box;"
+         itemprop="video" itemscope
+         itemtype="http://schema.org/VideoObject">
+        <span itemprop="name" content="Mad Max - Fury Road"></span>
+        <span itemprop="description" content=""></span>
+        <span itemprop="duration" content="153"></span>
+        <span itemprop="thumbnail"
+              content="http://cfvod.kaltura.com/p/1082342/sp/108234200/thumbnail/entry_id/1_ubq6luxb/version/100032/acv/531"></span>
+        <span itemprop="width" content="560"></span>
+        <span itemprop="height" content="315"></span>
+    </div>
+    <div id="analyticsLog" style="float: left; box-sizing: border-box; border-color: #cecece">
+        <script>
+            $("#analyticsLog:contains('onAdsManagerLoaded')").css("color", "lawngreen");
+        </script>
+    </div>
+</div>
+    <div style="clear: none;"></div>
+<pre style="width:1115px; margin: 0 auto; background-color: silver; padding: 5px;">
+    //playerStateChange with state argument -
+                    kdp.kBind('playerStateChange', function (state) {
+                if (state === "ready") {
+                    alert("player is ready!");
+                }
+                if (state === "playing") {
+                    alert("player is playing!")
+                }
+            });
+        });
+    </pre>
+
+
+    <script>
+        //kBinds and other functions
+        kWidget.addReadyCallback(function (playerId) {
+            var kdp = document.getElementById(playerId);
+            kdp.kBind('playerReady', function () {
+                $("#analyticsLog").append(kdp.evaluate("Player Version: " + "{playerVersion}<br>\n")).addClass("greenText");
+                $("#analyticsLog").append(kdp.evaluate("Entry Id: " + "{mediaProxy.entry.id}\n<br>")).addClass("greenText");
+                kdp.kBind('playerReady', function () {
+                    $("#analyticsLog").append("Ready to play.<br>").addClass("greenText")
+                });
+                $("#entrydit").replaceWith(kdp.evaluate("Entry Id: " + "{mediaProxy.entry.id}\n"));
+                $("#uiconf").replaceWith(kdp.evaluate("Uiconf id: " + "{configProxy.kw.uiConfId}\n"));
+                $("#entryName").replaceWith(kdp.evaluate("<p>{mediaProxy.entry.name}</p>"));
+
+
+            })
+
+            kdp.kBind('playerStateChange', function (state) {
+                if (state === "ready") {
+                    alert("player is ready!");
+                }
+                if (state === "playing") {
+                    alert("player is playing!")
+                }
+            });
+        });
+
+//        function setEntry() {
+//            kWidget.addReadyCallback(function (playerId) {
+//                var kdp = document.getElementById(playerId);
+//                var input = document.getElementById("adInput").value;
+//                kdp.sendNotification("changeMedia", {"entryId": input});
+//            })
+//        }
+//        function setKS() {
+//            kWidget.addReadyCallback(function (playerId) {
+//                var kdp = document.getElementById(playerId);
+//                var input = document.getElementById("ksInput").value;
+//                kdp.setKDPAttribute('servicesProxy.kalturaClient', 'ks', input);
+//            })
+//        }
+//        function doPlay() {
+//            kWidget.addReadyCallback(function (playerId) {
+//                var kdp = document.getElementById(playerId);
+//                kdp.sendNotification("doPlay");
+//            })
+//        }
+    </script>
+    <script>
+        var preroll = "https://ads.e-planning.net/eb/4/175df/player/preroll?ct=1&o=v&ma=1&vv=3";
+        mw.setConfig('EmbedPlayer.ShowPlayerAlerts', true);
+        mw.setConfig('debug', true);
+//        mw.setConfig("debugTarget", "analyticsLog");
+        mw.setConfig("autoScrollDebugTarget", true);
+        kWidget.embed({
+            "targetId": "kaltura_player_1466954509",
+            "wid": "_1068292",
+            "uiconf_id": 40058201,
+            "flashvars": {
+                "streamerType": "auto",
+                "EmbedPlayer.WebKitPlaysInline": false,
+                "autoPlay": false,
+                "doubleClick":{
+                    "plugin": true,
+                    "adTagUrl": "http://pubads.g.doubleclick.net/gampad/ads?env=vp&gdfp_req=1&impl=s&output=xml_vast2&unviewed_position_start=1&description_url=http%3A%2F%2Fwww.disney.co.uk&iu=/52706597/staging.kaltura.com/everything&sz=1920x480&url=%5bREFERRER_URL%5d&correlator=%5bTIMESTAMP%5d&ad_rule=1&cmsid=637&ciu_szs=320x50,300x250&cust_params=character%3Dmickey%26country%3Dde%26disneycms%3DMH%26player%3Dkaltura_v3&vid=1_ubq6luxb"
+                }
+            },
+            "cache_st": 1466954509,
+            "entry_id": "1_zxw5dvse"
+        });
+    </script>
+</body>
+
+</html>
