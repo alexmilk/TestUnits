@@ -6,11 +6,16 @@
     <script src="urlsearchparams_polyfill.js"></script>
     <!-- First step: load the library -->
     <script src="https://cdnapisec.kaltura.com/p/1666321/sp/166632100/embedPlaykitJs/uiconf_id/42459942" type="text/javascript"></script>
+    <style>
+        .playerClass {
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
 <!-- Second step: Create a placeholder div -->
-<div id="player-placeholder-container">
+<div id="player-placeholder-container" class="playerClass">
     <div id="player-placeholder" style="width: 640px; height: 480px; position: relative;"></div>
 </div>
 <!-- Third step: Define player configuration -->
