@@ -40,7 +40,7 @@
 	<br>
 	<button id="reload" name="Reload">Reload Player</button><button id="destroy" name="destroy" style="margin-left: 10px;">Destroy Player</button>
 	<br>
-	<input type="text" style="width: 560px; margin-top: 20px;" placeholder="AdTag URL"></input>
+	<input type="text" style="width: 560px; margin-top: 20px;" placeholder="AdTag URL"/>
 	<script>
 //        mw.setConfig( 'debug' , false ); //Should enable setConfig debug or 'debugKalturaPlayer' in the browser directly.
 
@@ -48,35 +48,112 @@
 	"targetId": "kaltura_player_1460032511",
 	"wid": "_1666321",
 	"uiconf_id": 34356981,
-	"flashvars": {
-	"streamerType": "auto",
-//	"EmbedPlayer.DisableHTML5FlashFallback": true,
-	"LeadWithHLSOnFlash": false,
-	"liveCore.disableLiveCheck": true,
-	"DoubleClick": {
-		"plugin": true,
-		"adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?slotname=/6850/here.out/video/playlist_player&sz=480x360%7C640x480&cust_params=cat%3Dfalling_angels%26title%3Dfallingforangel&url=https://www.out.com/popnography/2018/2/23/smith-jerrod-has-sided-sarah-jessica-parker-satc-feud-test&unviewed_position_start=1&impl=s&env=vp&gdfp_req=1&ad_rule=0&output=xml_vast3&video_url_to_fetch=https://www.out.com/popnography/2018/2/23/smith-jerrod-has-sided-sarah-jessica-parker-satc-feud-test&vad_type=linear&vpos=preroll&pod=1&vrid=805&max_ad_duration=130000&min_ad_duration=0&is_amp=0&adk=606393619&correlator=238085952866036&scor=536271136991516&ged=ve4_td13_tt1_pd13_la0_er1929.382.2082.682_vi1906.0.2314.1903_vp100_eb24299&osd=2&frm=0&video_doc_id=0_f4ddngl7&cmsid=4285&sdkv=h.3.193.1&sdki=3c0d&mpt=kaltura/mwEmbed&mpv=2.64.4&sdr=1&eid=651800001&u_so=l&kfa=0&tfcd=0",
-		"prerollUrl": null,
-        "numPreroll": 2,
-		"leadWithFlash": true,
-		"trackCuePoints": false,
-		"debugMode": true, //Should enable debugMode for DoubleClick systems.
-		"adsManagerLoadedTimeout": 15000
-},
-        "skipBtn": {
-            "label": "Skip Ad",
-            "skipOffset": 5, //Determines the offset before the skip button appears.
-            "plugin": true
-        },
-        "EmbedPlayer.ForceKPlayer": true,
-		"disableHLSOnJs": true,
-		"bumper":{
-			"preSequence": 0
-		},
-	"autoPlay": false
-	//"ADZONE": '/4160/mv.inctest',
-	//"TAGS": 'dfp_video_test',
-},
+            "flashvars": {
+                "streamerType": "auto",
+                "EmbedPlayer.WebKitPlaysInline": false,
+                "autoPlay": false,
+                "hlsjs.plugin": true,
+                "tMZConfigPlugin": {
+                    "iframeHTML5Js": "//assets.tmz.com/www.tmz.com/main/default/js/videos/TMZConfigPlugin.js",
+                    "plugin": true
+                },
+                "playlistAPI": {
+                    "iframeHTML5Js": "//assets.tmz.com/www.tmz.com/main/default/js/videos/tmzPlaylistAPI.js",
+                    "plugin": false,
+                    "width": "50%",
+                    "height": "50%",
+                    "containerPosition": "right",
+                    "kpl0Id": ""
+                },
+                "doubleClick": {
+                    "plugin": true,
+                    "adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=",
+                    "disableCompanionAds": false,
+                    "debugMode": true,
+                    "adsManagerLoadedTimeout": 3000,
+                    "timeout": 3,
+                    "leadWithFlash": false
+                },
+                "tmzShare": {
+                    "plugin": true,
+                    "iframeHTML5Js": "//assets.tmz.com/www.tmz.com/main/default/js/videos/tmzSharePlugin.js",
+                    "loadingPolicy": "onDemand",
+                    "position": "before",
+                    "width": "0%",
+                    "height": "0%",
+                    "includeInLayout": false,
+                    "parent": "controlsContainer",
+                    "align": "right",
+                    "socialShareURL": "http://www.tmz.com/videos/{mediaProxy.entry.id}",
+                    "order": 6
+                },
+                "comScoreStreamingTag": {
+                    "plugin": false,
+                    "debug": true,
+                    "asyncInit": true,
+                    "position": "before",
+                    "relativeTo": "video",
+                    "trackEventMonitor": "trackEvent",
+                    "c2": "3000013",
+                    "labelMapping": "ns_st_ci={mediaProxy.entry.id}, c8={mediaProxy.entry.name}, c6=*null, c3=TMZ, c4=TMZ.COM, ns_st_pr=tmz, ns_st_ge=Celebrity News Show, ns_st_pu=TMZ, ns_st_ep=*null, ns_st_sn=*null, ns_st_en=*null, ns_st_st=*null, ns_st_ge=*null, ns_st_ti=*null, ns_st_ia=0, ns_st_ce=0, ns_st_ddt=*null, ns_st_tdt=*null"
+                },
+                "omnitureOnPage": {
+                    "s_codeUrl": "https://assets.tmz.com/kaltura-player/tmz_s.code.js",
+                    "s_codeVarName": "s",
+                    "monitorEventInterval": "10",
+                    "customEvents": "videoViewEvent,playerPlayEndEvent,midrollEnd,prerollEnd",
+                    "additionalEvarsAndProps": "eVar1,eVar2,eVar3,eVar11,eVar12,eVar8,prop1,prop2,prop3,prop11,prop12,prop8,eVar10",
+                    "additionalEvarsAndPropsValues": "TMZ.us,Video,Video,{mediaProxy.entry.id},{mediaProxy.entry.duration},{mediaProxy.entry.name|escape},TMZ.us,Video,Video,{mediaProxy.entry.id},{mediaProxy.entry.duration},{mediaProxy.entry.name|escape},{mediaProxy.entry.categories|dfp-sanitized}",
+                    "plugin": true,
+                    "trackEventMonitor": "",
+                    "onPageJs1": "{onPagePluginPath}/omnitureOnPage/resources/omnitureOnPage.js",
+                    "autoTrack": true,
+                    "trackWhilePlaying": true
+                },
+                "akamaiMediaAnalytics": {
+                    "plugin": true,
+                    "securedConfigPath": "https://ma193-r.analytics.edgekey.net/config/beacon-9613.xml",
+                    "configPath": "http://ma193-r.analytics.edgesuite.net/config/beacon-9614.xml"
+                },
+                "comscore": {
+                    "plugin": false,
+                    "trackEventMonitor": "trackEvent",
+                    "c2": "3000013",
+                    "c4": "TMZ.COM"
+                },
+                "logo": {
+                    "plugin": true,
+                    "align": "right",
+                    "position": "before",
+                    "relativeTo": "video",
+                    "loadingPolicy": "onDemand",
+                    "order": "4",
+                    "img": "https://assets.tmz.com/kaltura-player/tmz-logo.png",
+                    "href": "http://www.tmz.com",
+                    "title": "TMZ"
+                },
+                "controlBarContainer": {
+                    "plugin": true,
+                    "hover": true
+                },
+                "autoPlay": false,
+                "autoMute": false,
+                "disableHLSOnJs": false,
+                "externalInterfaceDisabled": false,
+                "IframeCustomPluginCss1": "//assets.tmz.com/www.tmz.com/main/default/css/kaltura/1.0.1/kaltura_external_css.css",
+                "IframeCustomPluginJs1": "//assets.tmz.com/www.tmz.com/main/default/js/videos/1.0.1/tmzCustomFormater.js",
+                "adsOnReplay": true,
+                "thumbnailUrl": "https://images.tmz.com/2018/04/23/042318-chappelle-kal-1080x608.jpg",
+                "thumbEmbedOrigin": true,
+                "enableTooltips": true,
+                "imageDefaultDuration": 2,
+                "Kaltura.LeadWithHTML5": true,
+                "Kaltura.UseAppleAdaptive": false,
+                "EmbedPlayer.OverlayControls": true,
+                "EmbedPlayer.EnableIpadHTMLControls": true,
+                "EmbedPlayer.EnableIpadNativeFullscreen": true,
+                "enableControlsDuringAd": true
+            },
 	"cache_st": 1460032511,
 	"entry_id": "1_bzfy0msc"
 });

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<title>Enable Play Control during ad playback</title>
+	<script type="text/javascript" src="http://player.kaltura.com/tests/qunit/qunit-bootstrap.js"></script>
+	<script type="text/javascript" src="/mwEmbed/mwEmbedLoader.php/p/243342/sp/24334200/embedIframeJs/uiconf_id/13306622/partner_id/243342"></script>
+	<script type="text/javascript" src="http://player.kaltura.com/docs/js/doc-bootstrap.js"></script>
+  </head>
+  <body>
+	<h1>Enable Play/Pause Control during ad playback</h1>
+<div id="myVideoTarget" style="width:400px;height:330px;"></div>
+	<script>
+        mw.setConfig("debug", true);
+        kWidget.featureConfig({
+            'targetId': 'myVideoTarget',
+            'wid': '_243342',
+            'uiconf_id' : '13306622',
+            'entry_id' : '0_uka1msg4',
+            'flashvars': {
+                'enableControlsDuringAd': false,
+                "doubleClick": {
+                    "plugin": true,
+                    "adTagUrl": "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=",
+                    "disableCompanionAds": false,
+                    "debugMode": true,
+                    "adsManagerLoadedTimeout": 150000,
+                    "timeout": 3,
+                    "leadWithFlash": false
+                },
+                "controlBarContainer": {
+                    "plugin": true,
+                    "hover": true
+                },
+                'adsOnReplay':true
+            }
+        })
+	</script>
+  </body>
+</html>
