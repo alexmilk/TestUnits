@@ -7,7 +7,7 @@
             <Survey/>
             <Impression id="DART">
                 <![CDATA[
-http://ad.doubleclick.net/imp;v7;x;232859236;0-0;1;13452535;200/200;39455789/39473576/1;;~aopt=2/1/ff/1;~okv=;kw=angelahtml5;sz=200x200;dcmt=text/xml;~cs=l%3fhttp://s0.2mdn.net/dot.gif
+https://pubads.g.doubleclick.net/pagead/conversion/?ai=BxjRg3awPW9_qJo2s3gPah4joAfDYj-sGAAAAEAEgqN27JjgAWNjGssXXAWD5uvSDnBC6AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIlLzEyNDMxOTA5Ni9leHRlcm5hbC9zaW5nbGVfYWRfc2FtcGxlc_gC99EegAMBkAOEB5gDrAKoAwHgBAHSBQYQqPa5zAKQBgGgBiOoB5jOG9gHAeAHC9IIBwiAYRABGAE&sigh=HkFR8OSdiGE&label=part2viewed&ad_mt=[AD_MT]
 ]]>
             </Impression>
             <Creatives>
@@ -53,7 +53,7 @@ http://ad.doubleclick.net/activity;src=1248596;met=1;v=1;pid=13452535;aid=232859
                             </ClickThrough>
                             <ClickTracking id="DART">
                                 <![CDATA[
-http://ad.doubleclick.net/click%3Bh%3Dv8/3ac0/3/0/%2a/r%3B232859236%3B0-0%3B1%3B13452535%3B496-200/200%3B39455789/39473576/1%3B%3B%7Eaopt%3D2/1/ff/1%3B%7Esscs%3D%3fhttp://s0.2mdn.net/dot.gif
+https://pubads.g.doubleclick.net/pagead/conversion/?ai=BxjRg3awPW9_qJo2s3gPah4joAfDYj-sGAAAAEAEgqN27JjgAWNjGssXXAWD5uvSDnBC6AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIlLzEyNDMxOTA5Ni9leHRlcm5hbC9zaW5nbGVfYWRfc2FtcGxlc_gC99EegAMBkAOEB5gDrAKoAwHgBAHSBQYQqPa5zAKQBgGgBiOoB5jOG9gHAeAHC9IIBwiAYRABGAE&sigh=HkFR8OSdiGE&label=part2viewed&ad_mt=[AD_MT]
 ]]>
                             </ClickTracking>
                         </VideoClicks>
